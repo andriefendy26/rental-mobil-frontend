@@ -23,7 +23,7 @@ const Typewriter = ({
   });
 
   return (
-    <div className="text-center text-5xl font-bold">
+    <div className=" font-bold">
       <motion.div ref={scope} className="inline">
         {wordsArray.map((word, i) => {
           return (

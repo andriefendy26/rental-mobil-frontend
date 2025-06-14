@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@plugin "daisyui";
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+  }
+
+.trapezium-box {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+/* .card2 {
+    z-index: 99;
+}
+
+.card2::after {
+    content: " ";
+    position: relative;
+    width: 22rem;
+    height: 22rem;
+    background-color: #a7aaad;
+    border-radius : 54px;
+    right : 10px;
+} */
