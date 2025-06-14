@@ -2,10 +2,9 @@ import { LogoNav } from "@/components/LogoNav";
 import "react";
 import Logo from "../assets/Logo.png";
 
-
 export const Navbar = () => {
   return (
-    <div className="navbar bg-transparentshadow-sm ">
+    <div className="navbar fixed left-0 top-0 z-50 w-full bg-black/50 shadow-sm backdrop-blur-md ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,7 +26,7 @@ export const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="z-1 menu dropdown-content menu-sm mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
           >
             <li>
               <a>Home</a>

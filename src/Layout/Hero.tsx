@@ -1,5 +1,5 @@
 import { Button } from "@/components/Button";
-import HeroBG from "../assets/HeroBG.png";
+import BGHeader from "../assets/BGHeader.png";
 import { motion } from "framer-motion";
 import Typewriter from "@/components/Typewriter";
 
@@ -18,59 +18,50 @@ export const Hero = () => {
     },
   };
 
-  const bgVariant = {
-    hidden: { opacity: 0, x: 100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 1.2,
-        ease: "easeOut",
-      },
-    },
-  };
-
   const wordsd = [
-    { text: "Selamat ", className: "text-black" },
-    { text: "Datang ", className: "text-black" },
-    { text: "di ", className: "text-black" },
-    { text: "Tujuh ", className: "text-black" },
-    { text: "Sembilan ", className: "text-black" },
-    { text: "Oto Rental", className: "text-black" },
+    { text: "Rental ", className: "text-white" },
+    { text: "Terbaik ", className: "text-white" },
+    { text: "untuk ", className: "text-white" },
+    { text: "Kebutuhan ", className: "text-white" },
+    { text: "Anda", className: "text-white" },
   ];
 
   return (
-    <div className="container grid grid-cols-3">
-      <div className="col-span-2 flex min-h-[600px] items-center p-32   ">
-        <motion.div
-          className="space-y-4"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.h1 className="text-6xl font-bold" variants={fadeInUp}>
-            <Typewriter words={wordsd} />
-            {/* Rental Terbaik untuk Kebutuhan Anda */}
-          </motion.h1>
-          <motion.p className="text-xl" variants={fadeInUp}>
-            Nikmati perjalanan nyaman dengan armada kendaraan berkualitas dan
-            layanan terpercaya dari Tujuh Sembilan Oto Rental Berau.
-          </motion.p>
-          <motion.div className="flex gap-4" variants={fadeInUp}>
-            <Button color="maron">Lihat Armada Kami</Button>
-            <Button color="black">Pesan Sekarang</Button>
-          </motion.div>
-        </motion.div>
-      </div>
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      {/* Background */}
+      <img
+        src={BGHeader}
+        alt="background"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-[center_30%]"
+      />
 
-      {/* Backgroundnya */}
+      {/* gradient */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/70 to-transparent" />
+
+      {/* Content */}
       <motion.div
-        className="absolute -right-48 -top-36 -z-10 w-[1000px] overflow-hidden"
-        variants={bgVariant}
+        className="relative z-20 max-w-3xl px-4 text-center"
+        variants={container}
         initial="hidden"
         animate="visible"
       >
-        <img className="" src={HeroBG} alt="" />
+        <motion.h1
+          className="mb-6 text-4xl font-bold text-white md:text-6xl"
+          variants={fadeInUp}
+        >
+          Rental Terbaik untuk Kebutuhan Anda
+        </motion.h1>
+        <motion.p
+          className="mb-8 text-lg text-white md:text-xl"
+          variants={fadeInUp}
+        >
+          Nikmati perjalanan nyaman dengan armada kendaraan berkualitas dan
+          layanan terpercaya dari Tujuh Sembilan Oto Rental Berau.
+        </motion.p>
+        <motion.div className="flex justify-center gap-4" variants={fadeInUp}>
+          <Button color="maron">Lihat Armada Kami</Button>
+          <Button color="black">Pesan Sekarang</Button>
+        </motion.div>
       </motion.div>
     </div>
   );
