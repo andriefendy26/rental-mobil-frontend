@@ -1,5 +1,7 @@
 import Card2 from "@/components/Card2";
 import Logo1 from "../assets/1.png";
+import Car1 from "../assets/CarKeunggulan2.png";
+import Car2 from "../assets/CarKeunggulan1.png";
 
 interface KeunggulanProps {
   Logo: string;
@@ -8,61 +10,66 @@ interface KeunggulanProps {
 }
 
 export default function Keunggulan() {
-  const Keunggulan: KeunggulanProps = [
+  const Keunggulan: KeunggulanProps[] = [
     {
       Logo: Logo1,
       Judul: "Tersedia Pilihan Mobil",
       Deskripsi:
-        "Di CV Tujuh Sembilan Oto Tersedia berbagai jenis mobil sewa/rental yang bisa dipilih sesuai dengan kebutuhan pekerjaan dan perjalanan. Ada mobil matik dan manual dan lainnya.",
+        "Berbagai jenis mobil sewa tersedia sesuai kebutuhan perjalanan atau pekerjaan Anda.",
     },
     {
       Logo: Logo1,
       Judul: "Mobil Rental Terawat",
       Deskripsi:
-        "Kami memastikan mobil yang siap dirental atau sewa berada dalam kondisi baik dengan melakukan servis secara rutin.",
+        "Selalu dalam kondisi prima, dirawat secara berkala untuk kenyamanan dan keamanan Anda.",
     },
     {
       Logo: Logo1,
       Judul: "Biaya Sewa Terjangkau",
       Deskripsi:
-        "Kami merupakan salah satu penyedia rental mobil di Berau yang memberikan paket harga sewa yang terjangkau untuk semua kalangan masyarakat.",
+        "Harga bersaing untuk semua kalangan, dengan pilihan paket yang fleksibel.",
     },
     {
       Logo: Logo1,
-      Judul: "Tersedia Banyak Paket Sewa",
+      Judul: "Banyak Paket Sewa",
       Deskripsi:
-        "Di CV Tujuh Sembilan Oto Tersedia berbagai jenis mobil sewa/rental yang bisa dipilih sesuai dengan kebutuhan pekerjaan dan perjalanan. Ada mobil matik dan manual dan lainnya.",
+        "Sewa harian, mingguan, hingga bulanan. Bisa disesuaikan dengan kebutuhan Anda.",
     },
     {
       Logo: Logo1,
-      Judul: "Rental Sewa Buka 24 Jam",
+      Judul: "Layanan 24 Jam",
       Deskripsi:
-        "Untuk memberikan kemudahan sewa rental mobil di Berau, kami memberikan layanan 24 jam.",
+        "Kami siap melayani Anda kapan pun dengan sistem pemesanan yang fleksibel.",
     },
     {
       Logo: Logo1,
-      Judul: "Tersedia Paket Promo",
+      Judul: "Promo & Diskon",
       Deskripsi:
-        "Semakin sering menggunakan layanan jasa rental mobil CV Tujuh Sembilan Oto, Anda akan berpeluang besar mendapatkan paket promo dan diskon harga.",
+        "Manfaatkan berbagai promo dan diskon menarik untuk pelanggan setia kami.",
     },
   ];
+
   return (
-    <div className="bg-[#800000] py-10 text-center text-white">
-      <div className="mb-10 space-y-3">
+    <section className="relative overflow-hidden bg-[#800000] py-16 text-white">
+      <div className="mb-12 px-4 text-center">
         <h1 className="text-4xl font-bold">Keunggulan Kami</h1>
-        <p className="">
+        <p className="mt-2 text-lg">
           Keunggulan Rental Mobil Kami Dibandingkan yang Lainnya
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-5 px-40">
-        {Keunggulan.map(({ Logo, Judul, Deskripsi} : KeunggulanProps) => (
-          <Card2
-            Logo={Logo}
-            Judul={Judul}
-            Deskripsi={Deskripsi}
-          ></Card2>
+
+      {/* Grid Cards */}
+      <div className="grid grid-cols-1 justify-items-center gap-10 px-6 sm:grid-cols-2 md:grid-cols-3 md:px-24">
+        {Keunggulan.map(({ Logo, Judul, Deskripsi }, index) => (
+          <Card2 key={index} Logo={Logo} Judul={Judul} Deskripsi={Deskripsi} />
         ))}
       </div>
-    </div>
+
+      {/* Gambar Mobil */}
+      <div className="relative mt-20 flex items-center justify-between px-10 md:px-32">
+        <img src={Car1} alt="Car 1" className="-mb-10 w-36 md:-mb-16 md:w-52" />
+        <img src={Car2} alt="Car 2" className="-mb-10 w-36 md:-mb-16 md:w-52" />
+      </div>
+    </section>
   );
 }
