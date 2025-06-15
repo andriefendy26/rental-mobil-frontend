@@ -32,11 +32,11 @@ export const Hero = () => {
       <img
         src={BGHeader}
         alt="background"
-        className="absolute inset-0 z-0 h-full w-full object-cover object-[center_30%]"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-[center_20%]"
       />
 
       {/* gradient */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/70 to-transparent" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/60 to-transparent" />
 
       {/* Content */}
       <motion.div
