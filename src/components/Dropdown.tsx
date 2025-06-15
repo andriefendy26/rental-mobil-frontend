@@ -1,29 +1,40 @@
+import { FaArrowDown } from "react-icons/fa";
+
 type DropdownProps = {
   icon1: React.ReactNode;
-  icon2: React.ReactNode;
+  label: string;
+  desc: string;
+  options: string[];
+  onSelect?: (value: string) => void;
 };
 
-export default function Dropdown({ icon1, icon2 }: DropdownProps) {
+export default function Dropdown({
+  icon1,
+  label,
+  desc,
+  options,
+  onSelect,
+}: DropdownProps) {
   return (
-    <div className="dropdown dropdown-center rounded-xl border bg-white">
+    <div className="dropdown dropdown-center w-[180px] rounded-xl border bg-white text-black">
       <div tabIndex={0} role="button" className="flex items-center gap-3 p-2">
-        {icon1}
+        <div>{icon1}</div>
         <div className="text-start">
-          <h1 className="text-lg font-bold">Layanan</h1>
-          <p className="text-sm">Pilih jenis Layanan</p>
+          <h1 className="text-sm font-bold text-black">{label}</h1>
+          <p className="text-xs text-black">{desc}</p>
         </div>
-        {icon2}
+        <FaArrowDown size={18} className="ml-auto text-black" />
       </div>
+
       <ul
         tabIndex={0}
-        className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+        className="menu dropdown-content z-10 w-52 rounded-box bg-white p-2 text-black shadow"
       >
-        <li>
-          <a>Item 1</a>
-        </li>
-        <li>
-          <a>Item 2</a>
-        </li>
+        {options.map((item, i) => (
+          <li key={i}>
+            <a onClick={() => onSelect?.(item)}>{item}</a>
+          </li>
+        ))}
       </ul>
     </div>
   );

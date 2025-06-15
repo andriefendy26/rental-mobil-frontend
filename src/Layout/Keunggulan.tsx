@@ -1,5 +1,10 @@
 import Card2 from "@/components/Card2";
 import Logo1 from "../assets/1.png";
+import Logo2 from "../assets/8.png";
+import Logo3 from "../assets/7.png";
+import Logo4 from "../assets/6.png";
+import Logo5 from "../assets/5.png";
+import Logo6 from "../assets/4.png";
 import Car1 from "../assets/CarKeunggulan2.png";
 import Car2 from "../assets/CarKeunggulan1.png";
 
@@ -18,31 +23,31 @@ export default function Keunggulan() {
         "Berbagai jenis mobil sewa tersedia sesuai kebutuhan perjalanan atau pekerjaan Anda.",
     },
     {
-      Logo: Logo1,
+      Logo: Logo2,
       Judul: "Mobil Rental Terawat",
       Deskripsi:
         "Selalu dalam kondisi prima, dirawat secara berkala untuk kenyamanan dan keamanan Anda.",
     },
     {
-      Logo: Logo1,
+      Logo: Logo3,
       Judul: "Biaya Sewa Terjangkau",
       Deskripsi:
         "Harga bersaing untuk semua kalangan, dengan pilihan paket yang fleksibel.",
     },
     {
-      Logo: Logo1,
+      Logo: Logo4,
       Judul: "Banyak Paket Sewa",
       Deskripsi:
         "Sewa harian, mingguan, hingga bulanan. Bisa disesuaikan dengan kebutuhan Anda.",
     },
     {
-      Logo: Logo1,
+      Logo: Logo5,
       Judul: "Layanan 24 Jam",
       Deskripsi:
         "Kami siap melayani Anda kapan pun dengan sistem pemesanan yang fleksibel.",
     },
     {
-      Logo: Logo1,
+      Logo: Logo6,
       Judul: "Promo & Diskon",
       Deskripsi:
         "Manfaatkan berbagai promo dan diskon menarik untuk pelanggan setia kami.",
@@ -67,7 +72,7 @@ export default function Keunggulan() {
 
       {/* Gambar Mobil */}
       <div className="relative mt-20 flex items-center justify-between px-10 md:px-32">
-        <img src={Car1} alt="Car 1" className="-mb-10 w-36 md:-mb-16 md:w-52" />
+        <img src={Car1} alt="Car 1" className="md:w-92 -mb-10 w-36 md:-mb-16" />
         <img src={Car2} alt="Car 2" className="-mb-10 w-36 md:-mb-16 md:w-52" />
       </div>
     </section>
