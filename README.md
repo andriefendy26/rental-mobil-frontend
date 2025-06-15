@@ -20,15 +20,8 @@ and some elegant framer motion [examples components](https://github.com/matozz/v
 
 ## Install
 
-> This project uses [node](http://nodejs.org) and a package manager ([npm](https://npmjs.com), [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/)). Go check them out if you don't have them locally installed.
-
-Then you need a copy of this repository. You can [download](https://github.com/matozz/vite-react-framer-starter) a copy as zip but [degit](https://github.com/Rich-Harris/degit) is recommended.
-
-After you installed degit, please excute the following commandd:
-
 ```sh
-$ cd path-to-save-your-project
-$ degit matozz/vite-react-framer-starter your-project-name
+$ cd git clone https://github.com/andriefendy26/rental-mobil-frontend
 ```
 
 After getting a copy of this repository, you can use your package manager to install dependecies:
