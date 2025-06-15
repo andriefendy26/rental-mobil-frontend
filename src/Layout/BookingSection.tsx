@@ -32,7 +32,7 @@ const BookingSectionComp = () => {
               icon2={<FaArrowDown size={20} />}
             />
           </div>
-          <Button color="maron" onClick={() => setStep(2)}>
+          <Button color="maron" onclick={() => setStep(2)}>
             Berikutnya
           </Button>
         </>
