@@ -11,39 +11,87 @@ export default function AboutUs() {
           backgroundAttachment: "fixed",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>
       </div>
 
       {/* Content */}
       <div className="relative">
         {/* Header */}
         <div className="container mx-auto px-4 pt-20 text-center">
-          <h2 className="text-4xl font-bold tracking-wide text-white md:text-5xl">
+          <h2 className="text-4xl font-bold tracking-wide text-white md:text-6xl">
             TENTANG KAMI
           </h2>
-          <div className="mx-auto mt-4 h-1 w-24 bg-yellow-400"></div>
+          <div className="mx-auto mt-6 h-1 w-32 bg-gradient-to-r from-yellow-400 to-yellow-600"></div>
+          <p className="mt-6 text-lg text-gray-300 md:text-xl">
+            Partner Terpercaya untuk Semua Kebutuhan Transportasi Anda
+          </p>
         </div>
 
         {/* Main Content */}
         <div className="container mx-auto px-4 py-16">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-6xl">
             {/* Company Description */}
-            <div className="mb-16 rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
-              <h3 className="mb-6 text-3xl font-bold text-white">
-                CV. Tujuh Sembilan Oto
-              </h3>
-              <p className="text-lg leading-relaxed text-gray-200">
-                Kami adalah penyedia jasa rental mobil terpercaya di Berau yang
-                berkomitmen memberikan layanan terbaik untuk memenuhi kebutuhan
-                transportasi Anda, baik untuk keperluan pribadi, perusahaan,
-                maupun proyek tambang.
-              </p>
+            <div className="mb-20 rounded-3xl border border-white/10 bg-gradient-to-br from-white/15 to-white/5 p-10 backdrop-blur-md">
+              <div className="mb-8 text-center">
+                <h3 className="mb-6 text-4xl font-bold text-white">
+                  CV. Tujuh Sembilan Oto
+                </h3>
+                <div className="mx-auto mb-6 h-0.5 w-20 bg-yellow-400"></div>
+              </div>
+
+              <div className="grid items-center gap-8 md:grid-cols-2">
+                <div>
+                  <p className="mb-6 text-lg leading-relaxed text-gray-200">
+                    Sejak didirikan,{" "}
+                    <span className="font-semibold text-yellow-400">
+                      CV. Tujuh Sembilan Oto
+                    </span>{" "}
+                    telah menjadi pilihan utama untuk layanan rental mobil di
+                    Berau. Kami berkomitmen memberikan pengalaman transportasi
+                    yang aman, nyaman, dan terpercaya untuk setiap perjalanan
+                    Anda.
+                  </p>
+                  <p className="text-lg leading-relaxed text-gray-200">
+                    Dengan armada yang terawat dan tim profesional
+                    berpengalaman, kami siap melayani berbagai kebutuhan
+                    transportasi, mulai dari keperluan pribadi, bisnis, hingga
+                    proyek-proyek besar di sektor pertambangan.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-xl bg-white/10 p-4 text-center">
+                    <div className="text-3xl font-bold text-yellow-400">5+</div>
+                    <div className="text-sm text-gray-300">
+                      Tahun Pengalaman
+                    </div>
+                  </div>
+                  <div className="rounded-xl bg-white/10 p-4 text-center">
+                    <div className="text-3xl font-bold text-yellow-400">
+                      100+
+                    </div>
+                    <div className="text-sm text-gray-300">Klien Puas</div>
+                  </div>
+                  <div className="rounded-xl bg-white/10 p-4 text-center">
+                    <div className="text-3xl font-bold text-yellow-400">
+                      50+
+                    </div>
+                    <div className="text-sm text-gray-300">Armada Siap</div>
+                  </div>
+                  <div className="rounded-xl bg-white/10 p-4 text-center">
+                    <div className="text-3xl font-bold text-yellow-400">
+                      24/7
+                    </div>
+                    <div className="text-sm text-gray-300">Layanan</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Features Grid */}
-            <div className="grid gap-8 md:grid-cols-3">
-              <div className="group rounded-2xl bg-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/20">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#800000]">
+            {/* Vision & Mission */}
+            <div className="mb-20 grid gap-8 md:grid-cols-2">
+              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#800000]/20 to-[#800000]/10 p-8 backdrop-blur-sm">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#800000] to-[#a00000]">
                   <svg
                     className="h-8 w-8 text-white"
                     fill="none"
@@ -54,20 +102,29 @@ export default function AboutUs() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                     />
                   </svg>
                 </div>
-                <h4 className="mb-3 text-xl font-semibold text-white">
-                  Layanan 24 Jam
+                <h4 className="mb-4 text-2xl font-bold text-white">
+                  Visi Kami
                 </h4>
-                <p className="text-gray-200">
-                  Siap melayani Anda kapan saja, 24 jam sehari, 7 hari seminggu
+                <p className="leading-relaxed text-gray-200">
+                  Menjadi penyedia layanan rental mobil terdepan di Kalimantan
+                  Timur yang memberikan solusi transportasi terbaik dengan
+                  standar keamanan, kenyamanan, dan kepuasan pelanggan yang
+                  tinggi.
                 </p>
               </div>
 
-              <div className="group rounded-2xl bg-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/20">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#800000]">
+              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-yellow-400/20 to-yellow-400/10 p-8 backdrop-blur-sm">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600">
                   <svg
                     className="h-8 w-8 text-white"
                     fill="none"
@@ -78,85 +135,25 @@ export default function AboutUs() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
                     />
                   </svg>
                 </div>
-                <h4 className="mb-3 text-xl font-semibold text-white">
-                  Terpercaya
+                <h4 className="mb-4 text-2xl font-bold text-white">
+                  Misi Kami
                 </h4>
-                <p className="text-gray-200">
-                  Armada terawat dan pengemudi profesional
-                </p>
-              </div>
-
-              <div className="group rounded-2xl bg-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/20">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#800000]">
-                  <svg
-                    className="h-8 w-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <h4 className="mb-3 text-xl font-semibold text-white">
-                  Harga Bersaing
-                </h4>
-                <p className="text-gray-200">
-                  Dapatkan harga terbaik untuk setiap layanan kami
+                <p className="leading-relaxed text-gray-200">
+                  Menyediakan layanan rental mobil berkualitas tinggi dengan
+                  armada terawat, harga kompetitif, dan pelayanan professional
+                  untuk mendukung mobilitas dan kesuksesan bisnis klien.
                 </p>
               </div>
             </div>
 
-            {/* Services List */}
-            <div className="mt-16 grid gap-8 md:grid-cols-2">
-              <div className="rounded-2xl bg-white/10 p-6 backdrop-blur-sm">
-                <h4 className="mb-4 text-xl font-semibold text-white">
-                  Layanan Kami
-                </h4>
-                <ul className="space-y-3 text-gray-200">
-                  <li className="flex items-center">
-                    <span className="mr-2 text-yellow-400">•</span>
-                    Rental Mobil Pribadi
-                  </li>
-                  <li className="flex items-center">
-                    <span className="mr-2 text-yellow-400">•</span>
-                    Rental Mobil Perusahaan
-                  </li>
-                  <li className="flex items-center">
-                    <span className="mr-2 text-yellow-400">•</span>
-                    Rental Mobil Tambang
-                  </li>
-                </ul>
-              </div>
+         
 
-              <div className="rounded-2xl bg-white/10 p-6 backdrop-blur-sm">
-                <h4 className="mb-4 text-xl font-semibold text-white">
-                  Keunggulan
-                </h4>
-                <ul className="space-y-3 text-gray-200">
-                  <li className="flex items-center">
-                    <span className="mr-2 text-yellow-400">•</span>
-                    Armada Terawat
-                  </li>
-                  <li className="flex items-center">
-                    <span className="mr-2 text-yellow-400">•</span>
-                    Harga Bersaing
-                  </li>
-                  <li className="flex items-center">
-                    <span className="mr-2 text-yellow-400">•</span>
-                    Layanan 24 Jam
-                  </li>
-                </ul>
-              </div>
-            </div>
+          
+        
           </div>
         </div>
       </div>

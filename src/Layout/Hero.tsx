@@ -37,7 +37,7 @@ export const Hero = () => {
       ></div>
 
       {/* gradient */}
-      <div className="absolute backdrop-blur-lg inset-0 z-20 bg-black opacity-60" />
+      <div className="absolute  inset-0 z-20 bg-black opacity-60" />
 
       {/* Content */}
       <motion.div

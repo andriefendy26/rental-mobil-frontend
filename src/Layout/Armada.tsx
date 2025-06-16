@@ -23,7 +23,7 @@ export default function Armada() {
   return (
     <div
       className="relative overflow-hidden bg-[#464b49] bg-cover bg-center bg-no-repeat py-16"
-      style={{ backgroundImage: `url(${BGArmada})` }}
+      style={{ backgroundImage: `url(${BGArmada})`, backgroundAttachment: "fixed" }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>

@@ -1,4 +1,5 @@
 import CardRate from "@/components/CardRate";
+import Marquee from "react-fast-marquee";
 
 export default function Testimoni() {
   const data = [
@@ -32,7 +33,7 @@ export default function Testimoni() {
   const duplicatedData = [...data, ...data];
 
   return (
-    <div className="container mx-auto overflow-hidden px-4 py-16">
+    <div className="mx-auto overflow-hidden px-4">
       <div className="mb-16 text-center">
         <h1 className="text-4xl font-bold text-gray-800">TESTIMONI</h1>
         <p className="mt-4 text-lg text-gray-600">
@@ -40,10 +41,10 @@ export default function Testimoni() {
         </p>
       </div>
 
-      <div className="relative">
-        <div className="animate-scroll flex gap-8">
+      <Marquee gradient={true}>
+        <div className="flex gap-10 py-10">
           {duplicatedData.map((item, index) => (
-            <div key={index} className="w-[350px] flex-none">
+            <div key={index} className="">
               <CardRate
                 rating={item.rating}
                 name={item.name}
@@ -53,7 +54,7 @@ export default function Testimoni() {
             </div>
           ))}
         </div>
-      </div>
+      </Marquee>
     </div>
   );
 }
