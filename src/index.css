@@ -23,6 +23,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .swiper-button-prev {
   color: white;
 }
+.swiper-button-next {
+  color: white;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-350px * 3));
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+} 
 /* .card2 {
     z-index: 99;
 }

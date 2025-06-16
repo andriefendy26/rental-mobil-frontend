@@ -12,7 +12,7 @@ export default function Card2({ Logo, Judul, Deskripsi }: CardProps) {
         <h1 className="text-2xl font-bold">{Judul}</h1>
         <p className="text-md">{Deskripsi}</p>
       </div>
-      <div className="card2 absolute -right-6 top-5 flex h-[22rem] w-[22rem] flex-col items-center gap-3 rounded-[54px] bg-[#a7aaad] px-10 pb-6 pt-2 text-black"></div>
+      <div className="card2 absolute -right-3 top-3 flex h-[22rem] w-[22rem] flex-col items-center gap-3 rounded-[54px] bg-[#a7aaad] px-10 pb-6 pt-2 text-black"></div>
     </div>
   );
 }

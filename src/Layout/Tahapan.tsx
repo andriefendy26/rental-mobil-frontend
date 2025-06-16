@@ -19,22 +19,59 @@ export default function Tahapan() {
     },
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <div className="grid grid-cols-3">
-      <div className="col-span-2 space-y-8 p-32">
+    <div className="relative grid grid-cols-1 lg:grid-cols-3">
+      <div className="col-span-1 space-y-6 p-6 md:p-12 lg:col-span-2 lg:space-y-8 lg:px-32">
         <Button color="green" onclick={() => null}>
           Tahapan Pemesanan
         </Button>
-        <h1 className="text-5xl font-bold">Rental Mobil Dengan 3 Tahap</h1>
-        <div className="flex gap-3">
-          <Card Logo={Logo3} Deskripsi="Pilih layanan dan lokasi"></Card>
-          <Card Logo={Logo2} Deskripsi="Tentukan tanggal booking"></Card>
-          <Card Logo={Logo1} Deskripsi="Pilih layanan dan lokasi"></Card>
-        </div>
+        <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+          Rental Mobil Dengan 3 Tahap
+        </h1>
+        <motion.div
+          className="flex flex-col gap-4 md:flex-row md:gap-3"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.div variants={itemVariants}>
+            <Card Logo={Logo3} Deskripsi="Pilih layanan dan lokasi"></Card>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <Card Logo={Logo2} Deskripsi="Tentukan tanggal booking"></Card>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <Card Logo={Logo1} Deskripsi="Pilih layanan dan lokasi"></Card>
+          </motion.div>
+        </motion.div>
       </div>
       {/* Backgroundnya */}
       <motion.div
-        className="relative -top-40 right-10 -z-10 w-[1000px] overflow-hidden"
+        className="relative -top-40 right-10 -z-10 hidden w-[1000px] overflow-hidden lg:block"
         variants={bgVariant}
         initial="hidden"
         animate="visible"

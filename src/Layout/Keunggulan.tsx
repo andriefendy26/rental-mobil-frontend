@@ -7,6 +7,7 @@ import Logo5 from "../assets/5.png";
 import Logo6 from "../assets/4.png";
 import Car1 from "../assets/CarKeunggulan2.png";
 import Car2 from "../assets/CarKeunggulan1.png";
+import { motion } from "framer-motion";
 
 interface KeunggulanProps {
   Logo: string;
@@ -56,24 +57,64 @@ export default function Keunggulan() {
 
   return (
     <section className="relative overflow-hidden bg-[#800000] py-16 text-white">
-      <div className="mb-12 px-4 text-center">
-        <h1 className="text-4xl font-bold">Keunggulan Kami</h1>
-        <p className="mt-2 text-lg">
-          Keunggulan Rental Mobil Kami Dibandingkan yang Lainnya
-        </p>
-      </div>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10"></div>
 
-      {/* Grid Cards */}
-      <div className="grid grid-cols-1 justify-items-center gap-y-16  px-6 sm:grid-cols-2 md:grid-cols-3 md:px-24">
-        {Keunggulan.map(({ Logo, Judul, Deskripsi }, index) => (
-          <Card2 key={index} Logo={Logo} Judul={Judul} Deskripsi={Deskripsi} />
-        ))}
-      </div>
+      {/* Content */}
+      <div className="relative">
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <h1 className="text-4xl font-bold tracking-wide sm:text-5xl">
+            Keunggulan Kami
+          </h1>
+          <div className="mx-auto mt-4 h-1 w-24 bg-yellow-400"></div>
+          <p className="mt-6 text-lg text-gray-200">
+            Keunggulan Rental Mobil Kami Dibandingkan yang Lainnya
+          </p>
+        </div>
 
-      {/* Gambar Mobil */}
-      <div className="relative mt-20 flex items-center justify-between px-10 md:px-32">
-        <img src={Car1} alt="Car 1" className="md:w-[550px] relative -left-48" />
-        <img src={Car2} alt="Car 2" className=" md:w-[550px] relative -right-48" />
+        {/* Grid Cards */}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {Keunggulan.map(({ Logo, Judul, Deskripsi }, index) => (
+              <div key={index} className="flex justify-center">
+                <Card2 Logo={Logo} Judul={Judul} Deskripsi={Deskripsi} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Car Images */}
+        <div className="relative mt-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+              <motion.img
+                src={Car1}
+                alt="Car 1"
+                className="relative -left-48 md:w-[550px]"
+                initial={{ opacity: 0, x: -200 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 1,
+                  ease: "easeOut",
+                  delay: 0.2,
+                }}
+              />
+              <motion.img
+                src={Car2}
+                alt="Car 2"
+                className="relative -right-48 md:w-[550px]"
+                initial={{ opacity: 0, x: 200 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 1,
+                  ease: "easeOut",
+                  delay: 0.4,
+                }}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

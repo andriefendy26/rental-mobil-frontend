@@ -15,10 +15,10 @@ export default function CardArmada({ judul, image, price }: CardArmadaProps) {
     lastDotIndex !== -1 ? formatted.slice(0, lastDotIndex) : formatted;
   const tail = lastDotIndex !== -1 ? formatted.slice(lastDotIndex) : "";
   return (
-    <div className="overflow-hidden rounded-[30px] bg-[#800000]">
+    <div className="overflow-hidden rounded-[30px]">
       <div className="flex flex-col items-center bg-[#eceded] pt-2">
         <h1 className="text-2xl font-bold">{judul}</h1>
-        <img src={image} alt="" className="w-52" />
+        <img src={image} alt="" className="w-72" />
       </div>
       <div className="space-y-7 bg-[#800000] py-10 text-center text-white">
         <div>

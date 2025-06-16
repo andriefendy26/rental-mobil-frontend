@@ -6,6 +6,8 @@ import { Navbar } from "@/Layout/Navbar";
 import Tahapan from "@/Layout/Tahapan";
 import AboutUs from "@/Layout/AboutUs";
 import Armada from "@/Layout/Armada";
+import Galeri from "@/Layout/Galeri";
+import Testimoni from "@/Layout/Testimoni";
 // import React from 'react'
 
 const Home = () => {
@@ -18,6 +20,8 @@ const Home = () => {
       <AboutUs></AboutUs>
       <Keunggulan></Keunggulan>
       <Armada></Armada>
+      <Galeri></Galeri>
+      <Testimoni></Testimoni>
       <Footer></Footer>
     </div>
   );

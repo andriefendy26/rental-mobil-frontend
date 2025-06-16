@@ -1,17 +1,14 @@
 import { LogoNav } from "@/components/LogoNav";
-import "react";
 import { useEffect, useState } from "react";
-// import Logo from "../assets/Logo.png";
 
 export const Navbar = () => {
   const [isDarkBackground, setIsDarkBackground] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-
-      // Misalnya, ubah jadi putih setelah scroll 300px
-      if (scrollY > 600) {
+      if (scrollY > 50) {
         setIsDarkBackground(true);
       } else {
         setIsDarkBackground(false);
@@ -23,74 +20,137 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div className={`navbar fixed z-[9999] bg-transparent  shadow-sm  lg:px-40 `}>
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+    <nav
+      className={`fixed left-0 right-0 top-0 z-[9999] transition-all duration-300 ${
+        isDarkBackground
+          ? "bg-white/80 shadow-md backdrop-blur-md"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto lg:px-40">
+        <div className="flex h-20 items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center">
+            <a href="/" className="flex items-center">
+              <LogoNav />
+            </a>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-8">
+            <a
+              href="#"
+              className={`text-lg font-medium transition-colors duration-200 ${
+                isDarkBackground
+                  ? "text-gray-800 hover:text-[#800000]"
+                  : "text-white hover:text-gray-200"
+              }`}
+            >
+              Home
+            </a>
+            <a
+              href="#"
+              className={`text-lg font-medium transition-colors duration-200 ${
+                isDarkBackground
+                  ? "text-gray-800 hover:text-[#800000]"
+                  : "text-white hover:text-gray-200"
+              }`}
+            >
+              Layanan
+            </a>
+            <a
+              href="#"
+              className={`text-lg font-medium transition-colors duration-200 ${
+                isDarkBackground
+                  ? "text-gray-800 hover:text-[#800000]"
+                  : "text-white hover:text-gray-200"
+              }`}
+            >
+              Artikel
+            </a>
+            <a
+              href="#"
+              className={`text-lg font-medium transition-colors duration-200 ${
+                isDarkBackground
+                  ? "text-gray-800 hover:text-[#800000]"
+                  : "text-white hover:text-gray-200"
+              }`}
+            >
+              Tentang Kami
+            </a>
+            <button
+              className={`rounded-full px-6 py-2 text-lg font-medium transition-all duration-200 ${
+                isDarkBackground
+                  ? "bg-[#800000] text-white hover:bg-[#600000]"
+                  : "bg-white text-[#800000] hover:bg-gray-100"
+              }`}
+            >
+              Hubungi Kami
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="rounded-lg p-2 lg:hidden"
+          >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className={`h-6 w-6 ${
+                isDarkBackground ? "text-gray-800" : "text-white"
+              }`}
               fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              {isMobileMenuOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
             </svg>
-          </div>
-          <ul
-            tabIndex={0}
-            className="z-1 menu dropdown-content menu-sm mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
-          >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
+          </button>
         </div>
-        <a className="btn btn-ghost">
-          <LogoNav></LogoNav>
-        </a>
+
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden ${
+            isMobileMenuOpen ? "block" : "hidden"
+          } transition-all duration-300`}
+        >
+          <div className="space-y-1 rounded-lg bg-white/90 p-4 backdrop-blur-md">
+            <a
+              href="#"
+              className="block rounded-lg px-4 py-2 text-gray-800 hover:bg-gray-100"
+            >
+              Home
+            </a>
+            <a
+              href="#"
+              className="block rounded-lg px-4 py-2 text-gray-800 hover:bg-gray-100"
+            >
+              Layanan
+            </a>
+            <a
+              href="#"
+              className="block rounded-lg px-4 py-2 text-gray-800 hover:bg-gray-100"
+            >
+              Artikel
+            </a>
+            <a
+              href="#"
+              className="block rounded-lg px-4 py-2 text-gray-800 hover:bg-gray-100"
+            >
+              Tentang Kami
+            </a>
+            <button className="mt-4 w-full rounded-full bg-[#800000] px-6 py-2 text-white hover:bg-[#600000]">
+              Hubungi Kami
+            </button>
+          </div>
+        </div>
       </div>
-      <div
-        className={`navbar-center hidden ${
-          isDarkBackground ? "text-black" : "text-white"
-        } lg:flex`}
-      >
-        <ul className="menu menu-horizontal gap-5 px-1 tracking-widest lg:text-lg">
-          <li>
-            <a>Home </a>
-          </li>
-          <li>
-            <a>Layanan</a>
-          </li>
-          <li>
-            <a>Artikel</a>
-          </li>
-          <li>
-            <a>Tentang Kami</a>
-          </li>
-        </ul>
-      </div>
-      <div className="navbar-end">{/* <a className="btn">Button</a> */}</div>
-    </div>
+    </nav>
   );
 };
