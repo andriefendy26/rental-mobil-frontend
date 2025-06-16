@@ -1,14 +1,15 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
 interface ButtonProps {
-  color: "black" | "blue" | "white" | "maron";
-  onclick: React.MouseEvent<HTMLButtonElement>;
+  color: "black" | "blackW" | "blue" | "white" | "maron" | "green";
+  onclick: () => void;
   children: React.ReactNode;
 }
 
 export function Button({ color, onclick, children }: ButtonProps) {
-  const colors: unknown = {
+  const colors = {
     black: "bg-black text-white",
+    blackW: "bg-white text-black",
     blue: "bg-blue-500 text-white",
     white: "bg-white text-black",
     maron: "bg-[#800000] text-white",
@@ -17,7 +18,7 @@ export function Button({ color, onclick, children }: ButtonProps) {
 
   return (
     <button
-      className={`${colors[color]} rounded-lg font-sans text-xl font-medium shadow lg:px-7 lg:py-3`}
+      className={`${colors[color]} rounded-lg font-sans text-md font-medium shadow lg:px-7 lg:py-3`}
       onClick={onclick}
     >
       {children}

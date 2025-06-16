@@ -22,7 +22,9 @@ export default function Tahapan() {
   return (
     <div className="grid grid-cols-3">
       <div className="col-span-2 space-y-8 p-32">
-        <Button color="green">Tahapan Pemesanan</Button>
+        <Button color="green" onclick={() => null}>
+          Tahapan Pemesanan
+        </Button>
         <h1 className="text-5xl font-bold">Rental Mobil Dengan 3 Tahap</h1>
         <div className="flex gap-3">
           <Card Logo={Logo3} Deskripsi="Pilih layanan dan lokasi"></Card>
@@ -32,7 +34,7 @@ export default function Tahapan() {
       </div>
       {/* Backgroundnya */}
       <motion.div
-        className="relative -top-40 right-10 -z-10 w-[500px] overflow-hidden"
+        className="relative -top-40 right-10 -z-10 w-[1000px] overflow-hidden"
         variants={bgVariant}
         initial="hidden"
         animate="visible"

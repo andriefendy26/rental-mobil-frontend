@@ -3,18 +3,26 @@
 @tailwind utilities;
 @plugin "daisyui";
 html {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    overflow-x: hidden;
-  }
-
-.trapezium-box {
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  overflow-x: hidden;
 }
 
+.trapezium-box {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.swiper-button-prev {
+  color: white;
+}
 /* .card2 {
     z-index: 99;
 }

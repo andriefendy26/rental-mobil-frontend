@@ -5,6 +5,7 @@ import Keunggulan from "@/Layout/Keunggulan";
 import { Navbar } from "@/Layout/Navbar";
 import Tahapan from "@/Layout/Tahapan";
 import AboutUs from "@/Layout/AboutUs";
+import Armada from "@/Layout/Armada";
 // import React from 'react'
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <Tahapan></Tahapan>
       <AboutUs></AboutUs>
       <Keunggulan></Keunggulan>
+      <Armada></Armada>
       <Footer></Footer>
     </div>
   );

@@ -1,10 +1,29 @@
 import { LogoNav } from "@/components/LogoNav";
 import "react";
-import Logo from "../assets/Logo.png";
+import { useEffect, useState } from "react";
+// import Logo from "../assets/Logo.png";
 
 export const Navbar = () => {
+  const [isDarkBackground, setIsDarkBackground] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      // Misalnya, ubah jadi putih setelah scroll 300px
+      if (scrollY > 600) {
+        setIsDarkBackground(true);
+      } else {
+        setIsDarkBackground(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="navbar fixed left-0 top-0 z-50 w-full bg-black/50 shadow-sm backdrop-blur-md ">
+    <div className={`navbar fixed z-[9999] bg-transparent  shadow-sm  lg:px-40 `}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,37 +48,45 @@ export const Navbar = () => {
             className="z-1 menu dropdown-content menu-sm mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
           >
             <li>
-              <a>Home</a>
+              <a>Item 1</a>
             </li>
             <li>
-              <a>Layanan</a>
+              <a>Parent</a>
+              <ul className="p-2">
+                <li>
+                  <a>Submenu 1</a>
+                </li>
+                <li>
+                  <a>Submenu 2</a>
+                </li>
+              </ul>
             </li>
             <li>
-              <a>Blog</a>
-            </li>
-            <li>
-              <a>Tentang</a>
+              <a>Item 3</a>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl lg:hidden ">
-          <img className="w-28" src={Logo} alt="" />
+        <a className="btn btn-ghost">
+          <LogoNav></LogoNav>
         </a>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal items-center gap-5 px-1">
+      <div
+        className={`navbar-center hidden ${
+          isDarkBackground ? "text-black" : "text-white"
+        } lg:flex`}
+      >
+        <ul className="menu menu-horizontal gap-5 px-1 tracking-widest lg:text-lg">
           <li>
-            <a>Home</a>
+            <a>Home </a>
           </li>
           <li>
             <a>Layanan</a>
           </li>
-          <LogoNav></LogoNav>
           <li>
-            <a>Blog</a>
+            <a>Artikel</a>
           </li>
           <li>
-            <a>Tentang</a>
+            <a>Tentang Kami</a>
           </li>
         </ul>
       </div>

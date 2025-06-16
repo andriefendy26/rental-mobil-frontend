@@ -64,7 +64,7 @@ export default function Keunggulan() {
       </div>
 
       {/* Grid Cards */}
-      <div className="grid grid-cols-1 justify-items-center gap-10 px-6 sm:grid-cols-2 md:grid-cols-3 md:px-24">
+      <div className="grid grid-cols-1 justify-items-center gap-y-16  px-6 sm:grid-cols-2 md:grid-cols-3 md:px-24">
         {Keunggulan.map(({ Logo, Judul, Deskripsi }, index) => (
           <Card2 key={index} Logo={Logo} Judul={Judul} Deskripsi={Deskripsi} />
         ))}
@@ -72,8 +72,8 @@ export default function Keunggulan() {
 
       {/* Gambar Mobil */}
       <div className="relative mt-20 flex items-center justify-between px-10 md:px-32">
-        <img src={Car1} alt="Car 1" className="md:w-92 -mb-10 w-36 md:-mb-16" />
-        <img src={Car2} alt="Car 2" className="-mb-10 w-36 md:-mb-16 md:w-52" />
+        <img src={Car1} alt="Car 1" className="md:w-[550px] relative -left-48" />
+        <img src={Car2} alt="Car 2" className=" md:w-[550px] relative -right-48" />
       </div>
     </section>
   );

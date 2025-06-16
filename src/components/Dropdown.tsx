@@ -1,11 +1,9 @@
-import { FaArrowDown } from "react-icons/fa";
-
 type DropdownProps = {
   icon1: React.ReactNode;
   label: string;
   desc: string;
   options: string[];
-  onSelect?: (value: string) => void;
+  // onSelect?: (value: string) => void;
 };
 
 export default function Dropdown({
@@ -13,29 +11,22 @@ export default function Dropdown({
   label,
   desc,
   options,
-  onSelect,
+  // onSelect,
 }: DropdownProps) {
   return (
-    <div className="dropdown dropdown-center w-[180px] rounded-xl border bg-white text-black">
-      <div tabIndex={0} role="button" className="flex items-center gap-3 p-2">
-        <div>{icon1}</div>
-        <div className="text-start">
-          <h1 className="text-sm font-bold text-black">{label}</h1>
-          <p className="text-xs text-black">{desc}</p>
-        </div>
-        <FaArrowDown size={18} className="ml-auto text-black" />
+    <div className="flex items-center gap-3 w-56">
+      <div className="">
+        {icon1}
       </div>
-
-      <ul
-        tabIndex={0}
-        className="menu dropdown-content z-10 w-52 rounded-box bg-white p-2 text-black shadow"
-      >
-        {options.map((item, i) => (
-          <li key={i}>
-            <a onClick={() => onSelect?.(item)}>{item}</a>
-          </li>
-        ))}
-      </ul>
+      <div className="flex flex-col">
+        <label className="text-sm font-bold px-1">{label}</label>
+        <select name="" id="" defaultValue={desc} className="bg-transparent p-0 m-0">
+        <option disabled={true}>{desc}</option>
+          {options.map((item, i) => (
+            <option key={i}>{item}</option>
+          ))} 
+        </select>
+      </div>
     </div>
   );
 }
