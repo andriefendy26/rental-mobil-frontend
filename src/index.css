@@ -22,9 +22,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .swiper-button-prev {
   color: white;
+  background-color: gray;
+  border-radius: 50%;
+  padding: 30px;
 }
 .swiper-button-next {
   color: white;
+  background-color: gray;
+  border-radius: 50%;
+  padding: 30px;
 }
 
 @keyframes scroll {

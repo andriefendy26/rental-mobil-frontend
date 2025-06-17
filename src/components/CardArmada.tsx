@@ -9,37 +9,78 @@ export default function CardArmada({ judul, image, price }: CardArmadaProps) {
     style: "decimal",
     currency: "IDR",
   });
-  const formatted = IDR.format(price); // e.g. "Rp1.000.000"
+  const formatted = IDR.format(price);
   const lastDotIndex = formatted.lastIndexOf(".");
   const head =
     lastDotIndex !== -1 ? formatted.slice(0, lastDotIndex) : formatted;
   const tail = lastDotIndex !== -1 ? formatted.slice(lastDotIndex) : "";
+
   return (
-    <div className="overflow-hidden rounded-[30px]">
-      <div className="flex flex-col items-center bg-[#eceded] pt-2">
-        <h1 className="text-2xl font-bold">{judul}</h1>
-        <img src={image} alt="" className="w-72" />
-      </div>
-      <div className="space-y-7 bg-[#800000] py-10 text-center text-white">
-        <div>
-          <h1 className="text-6xl font-bold">
-            {head}
-            {tail && <span className="align-top text-sm">{tail}</span>}IDR
+    <div className="transform overflow-hidden rounded-3xl bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+      {/* Header Section */}
+      <div className="relative bg-gradient-to-br from-gray-100/40 to-gray-200/100 pb-2 pt-3">
+        <div className="flex flex-col items-center">
+          <h1 className="mb-2 px-4 text-center text-2xl font-bold text-gray-800">
+            {judul}
           </h1>
-          <p>/hari</p>
+          <div className="relative">
+            <img
+              src={image}
+              alt={judul}
+              className="h-52 w-60 object-contain drop-shadow-lg"
+            />
+          </div>
         </div>
-        <div>
-          <a className="rounded-xl border border-white bg-[#eceded] px-2 py-1 text-[#464b49]">
+      </div>
+
+      {/* Main Content */}
+      <div className="bg-gradient-to-b from-[#800000] to-[#600000] text-white">
+        {/* Price Section */}
+        <div className="border-b border-white/20 px-6 py-3 text-center">
+          <div>
+            <h2 className="text-4xl font-bold leading-none lg:text-5xl">
+              {head}
+              {tail && (
+                <span className="text-lg font-medium opacity-80">{tail}</span>
+              )}
+              <span className="ml-2 font-medium">IDR</span>
+            </h2>
+            <p className="mt-1 text-lg text-white/80">/hari</p>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="px-6 py-3 text-center">
+          <button className="transform rounded-xl bg-white px-8 py-3 font-semibold text-[#800000] shadow-lg transition-all duration-200 hover:scale-105 hover:bg-gray-100 hover:shadow-xl">
             Pesan Sekarang
-          </a>
+          </button>
         </div>
-        <div>
-          <h1 className="space-y-6 text-xl font-bold">SPESIFIKASI</h1>
-          <p>Transmisi : AT/MT</p>
-          <p>Bahan Bakar : AT/MT</p>
-          <p>Warna : Menyesuaikan</p>
-          <p>Kapasitas : 8 Orang</p>
-          <p>Tahun : TInggi</p>
+
+        {/* Specifications */}
+        <div className="px-6 pb-4">
+          <h3 className="mb-2 text-center text-xl font-bold">SPESIFIKASI</h3>
+          <div className="grid grid-cols-1 gap-2">
+            <div className="flex items-center justify-between border-b border-white/20 py-1">
+              <span className="text-white/80">Transmisi</span>
+              <span className="font-medium">AT/MT</span>
+            </div>
+            <div className="flex items-center justify-between border-b border-white/20 py-1">
+              <span className="text-white/80">Bahan Bakar</span>
+              <span className="font-medium">Bensin</span>
+            </div>
+            <div className="flex items-center justify-between border-b border-white/20 py-1">
+              <span className="text-white/80">Warna</span>
+              <span className="font-medium">Menyesuaikan</span>
+            </div>
+            <div className="flex items-center justify-between border-b border-white/20 py-1">
+              <span className="text-white/80">Kapasitas</span>
+              <span className="font-medium">8 Orang</span>
+            </div>
+            <div className="flex items-center justify-between py-1">
+              <span className="text-white/80">Tahun</span>
+              <span className="font-medium">Terbaru</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -61,7 +61,7 @@ export default function Armada() {
             className="pb-12"
           >
             {Armada.map((item, i) => (
-              <SwiperSlide key={i} className="pb-8">
+              <SwiperSlide key={i} className="p-4">
                 <CardArmada
                   judul={item.judul}
                   image={item.img}
@@ -72,7 +72,7 @@ export default function Armada() {
           </Swiper>
 
           {/* Button */}
-          <div className="mt-8 text-center">
+          <div className=" text-center">
             <Button color="maron" onclick={() => null}>
               <span className="px-6">Selengkapnya</span>
             </Button>
