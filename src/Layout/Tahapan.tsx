@@ -71,7 +71,7 @@ export default function Tahapan() {
       </div>
       {/* Backgroundnya */}
       <motion.div
-        className="relative -top-40 right-10 -z-10 hidden w-[1000px] overflow-hidden lg:block"
+        className="absolute -top-40 -right-96 -z-10 hidden w-[1000px] overflow-hidden lg:block"
         variants={bgVariant}
         initial="hidden"
         animate="visible"

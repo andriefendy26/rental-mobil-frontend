@@ -18,7 +18,7 @@ export default function Card({ Logo, Deskripsi }: CardProps) {
         {/* Logo Container */}
         <div className="relative mb-4 transition-transform duration-300 group-hover:scale-105">
           <div className={newLocal}></div>
-          <div className="relative rounded-3xl border border-white/20 bg-white/10 p-4">
+          <div className="relative rounded-3xl p-4">
             <img
               src={Logo}
               className="h-auto w-32 object-contain drop-shadow-lg transition-all duration-300"
