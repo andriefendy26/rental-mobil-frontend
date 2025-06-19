@@ -235,7 +235,7 @@ const BookingSectionComp = () => {
       <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-red-50 via-white to-orange-50"></div>
 
       {/* Main container */}
-      <div className="relative z-50 flex flex-col overflow-hidden rounded-2xl border-2 border-gray-200 bg-white/80 p-6 px-12 shadow-2xl md:mx-24 lg:-top-14 lg:mx-16">
+      <div className="relative z-50 flex flex-col overflow-hidden rounded-2xl border-2 border-gray-200 bg-white p-6 px-12 shadow-2xl md:mx-24 lg:-top-14 lg:mx-16">
         {/* Progress indicator */}
         <div className="mb-8 flex items-center justify-center">
           <div className="flex items-center gap-4">

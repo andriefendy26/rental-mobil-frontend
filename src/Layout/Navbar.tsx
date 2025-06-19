@@ -1,5 +1,6 @@
 import { LogoNav } from "@/components/LogoNav";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [isDarkBackground, setIsDarkBackground] = useState(false);
@@ -27,10 +28,10 @@ export const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto lg:px-40">
+      <div className="container mx-auto ">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center ml-3">
             <a href="/" className="flex items-center">
               <LogoNav />
             </a>
@@ -38,8 +39,8 @@ export const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
-            <a
-              href="#"
+            <Link
+              to="/"
               className={`text-lg font-medium transition-colors duration-200 ${
                 isDarkBackground
                   ? "text-gray-800 hover:text-[#800000]"
@@ -47,9 +48,9 @@ export const Navbar = () => {
               }`}
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/layanan"
               className={`text-lg font-medium transition-colors duration-200 ${
                 isDarkBackground
                   ? "text-gray-800 hover:text-[#800000]"
@@ -57,9 +58,9 @@ export const Navbar = () => {
               }`}
             >
               Layanan
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/artikel"
               className={`text-lg font-medium transition-colors duration-200 ${
                 isDarkBackground
                   ? "text-gray-800 hover:text-[#800000]"
@@ -67,9 +68,9 @@ export const Navbar = () => {
               }`}
             >
               Artikel
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/tentangkami"
               className={`text-lg font-medium transition-colors duration-200 ${
                 isDarkBackground
                   ? "text-gray-800 hover:text-[#800000]"
@@ -77,8 +78,8 @@ export const Navbar = () => {
               }`}
             >
               Tentang Kami
-            </a>
-            <button
+            </Link>
+            {/* <button
               className={`rounded-full px-6 py-2 text-lg font-medium transition-all duration-200 ${
                 isDarkBackground
                   ? "bg-[#800000] text-white hover:bg-[#600000]"
@@ -86,7 +87,7 @@ export const Navbar = () => {
               }`}
             >
               Hubungi Kami
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Menu Button */}

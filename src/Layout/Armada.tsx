@@ -42,7 +42,7 @@ export default function Armada() {
         </div>
 
         {/* Carousel */}
-        <div className="container mx-auto mt-12 px-4">
+        <div className="xl:mx-32 mx-auto mt-12 px-4">
           <Swiper
             navigation={true}
             modules={[Navigation, Pagination]}
@@ -56,7 +56,7 @@ export default function Armada() {
               1024: {
                 slidesPerView: 3,
                 spaceBetween: 30,
-              },
+              }
             }}
             className="pb-12"
           >

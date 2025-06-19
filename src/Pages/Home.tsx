@@ -1,8 +1,6 @@
 import { BookingSection } from "@/Layout/BookingSection";
-import Footer from "@/Layout/Footer";
 import { Hero } from "@/Layout/Hero";
 import Keunggulan from "@/Layout/Keunggulan";
-import { Navbar } from "@/Layout/Navbar";
 import Tahapan from "@/Layout/Tahapan";
 import AboutUs from "@/Layout/AboutUs";
 import Armada from "@/Layout/Armada";
@@ -13,7 +11,6 @@ import Testimoni from "@/Layout/Testimoni";
 const Home = () => {
   return (
     <div className="">
-      <Navbar></Navbar>
       <Hero></Hero>
       <BookingSection></BookingSection>
       <Tahapan></Tahapan>
@@ -22,7 +19,6 @@ const Home = () => {
       <Armada></Armada>
       <Galeri></Galeri>
       <Testimoni></Testimoni>
-      <Footer></Footer>
     </div>
   );
 };

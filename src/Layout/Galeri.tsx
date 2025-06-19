@@ -59,7 +59,7 @@ export default function Galeri() {
       {/* Gallery Grid */}
       <div className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="columns-1 gap-6 space-y-6 sm:columns-2 lg:columns-3 xl:columns-4">
+          <div className="columns-2 gap-6 space-y-6 sm:columns-2 lg:columns-3 xl:columns-4">
             {data.map(({ imageLink }, index) => (
               <div
                 key={index}
