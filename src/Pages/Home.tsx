@@ -1,3 +1,4 @@
+
 import { BookingSection } from "@/Layout/BookingSection";
 import { Hero } from "@/Layout/Hero";
 import Keunggulan from "@/Layout/Keunggulan";
@@ -6,17 +7,22 @@ import AboutUs from "@/Layout/AboutUs";
 import Armada from "@/Layout/Armada";
 import Galeri from "@/Layout/Galeri";
 import Testimoni from "@/Layout/Testimoni";
-// import React from 'react'
+import { Mobil } from "@/App";
 
-const Home = () => {
+interface Props {
+  mobil : Mobil[];
+  isLoading : boolean;
+}
+
+const Home = ({ mobil, isLoading }: Props) => {
   return (
-    <div className="">
+    <div className="bg-white">
       <Hero></Hero>
       <BookingSection></BookingSection>
       <Tahapan></Tahapan>
       <AboutUs></AboutUs>
       <Keunggulan></Keunggulan>
-      <Armada></Armada>
+      <Armada data={mobil} isLoading={isLoading}></Armada>
       <Galeri></Galeri>
       <Testimoni></Testimoni>
     </div>

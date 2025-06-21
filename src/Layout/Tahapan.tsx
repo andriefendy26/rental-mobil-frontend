@@ -48,7 +48,7 @@ export default function Tahapan() {
         <Button color="green" onclick={() => null}>
           Tahapan Pemesanan
         </Button>
-        <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+        <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl text-gray-800">
           Rental Mobil Dengan 3 Tahap
         </h1>
         <motion.div
@@ -71,7 +71,7 @@ export default function Tahapan() {
       </div>
       {/* Backgroundnya */}
       <motion.div
-        className="absolute -top-64 -right-96 -z-10 hidden w-[1000px] overflow-hidden lg:block"
+        className="absolute -top-64 -right-96  hidden w-[1000px] overflow-hidden lg:block"
         variants={bgVariant}
         initial="hidden"
         animate="visible"

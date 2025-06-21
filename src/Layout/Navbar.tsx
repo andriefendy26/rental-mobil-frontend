@@ -28,10 +28,10 @@ export const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto ">
-        <div className="flex h-20 items-center justify-between">
+      <div className="">
+        <div className="flex h-20 items-center justify-around">
           {/* Logo */}
-          <div className="flex items-center ml-3">
+          <div className="ml-3 flex items-center">
             <a href="/" className="flex items-center">
               <LogoNav />
             </a>
@@ -50,14 +50,14 @@ export const Navbar = () => {
               Home
             </Link>
             <Link
-              to="/layanan"
+              to="/armada"
               className={`text-lg font-medium transition-colors duration-200 ${
                 isDarkBackground
                   ? "text-gray-800 hover:text-[#800000]"
                   : "text-white hover:text-gray-200"
               }`}
             >
-              Layanan
+              Armada
             </Link>
             <Link
               to="/artikel"
@@ -79,16 +79,18 @@ export const Navbar = () => {
             >
               Tentang Kami
             </Link>
-            {/* <button
-              className={`rounded-full px-6 py-2 text-lg font-medium transition-all duration-200 ${
-                isDarkBackground
-                  ? "bg-[#800000] text-white hover:bg-[#600000]"
-                  : "bg-white text-[#800000] hover:bg-gray-100"
-              }`}
-            >
-              Hubungi Kami
-            </button> */}
           </div>
+          {/* <>.</> */}
+
+          {/* <button
+            className={`hidden sm:block rounded-full px-6 py-2 text-lg font-medium transition-all duration-200 ${
+              isDarkBackground
+                ? "bg-[#800000] text-white hover:bg-[#600000]"
+                : "bg-white text-[#800000] hover:bg-gray-100"
+            }`}
+          >
+            Hubungi Kami
+          </button> */}
 
           {/* Mobile Menu Button */}
           <button

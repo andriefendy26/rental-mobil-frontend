@@ -61,25 +61,25 @@ export default function AboutUs() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="rounded-xl bg-white/10 p-4 text-center">
-                    <div className="text-3xl font-bold text-yellow-400">5+</div>
+                    <div className="text-3xl font-bold text-white">5+</div>
                     <div className="text-sm text-gray-300">
                       Tahun Pengalaman
                     </div>
                   </div>
                   <div className="rounded-xl bg-white/10 p-4 text-center">
-                    <div className="text-3xl font-bold text-yellow-400">
+                    <div className="text-3xl font-bold text-white">
                       100+
                     </div>
                     <div className="text-sm text-gray-300">Klien Puas</div>
                   </div>
                   <div className="rounded-xl bg-white/10 p-4 text-center">
-                    <div className="text-3xl font-bold text-yellow-400">
+                    <div className="text-3xl font-bold text-white">
                       50+
                     </div>
                     <div className="text-sm text-gray-300">Armada Siap</div>
                   </div>
                   <div className="rounded-xl bg-white/10 p-4 text-center">
-                    <div className="text-3xl font-bold text-yellow-400">
+                    <div className="text-3xl font-bold text-white">
                       24/7
                     </div>
                     <div className="text-sm text-gray-300">Layanan</div>
@@ -90,7 +90,7 @@ export default function AboutUs() {
 
             {/* Vision & Mission */}
             <div className="mb-20 grid gap-8 md:grid-cols-2">
-              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#800000]/20 to-[#800000]/10 p-8 backdrop-blur-sm">
+              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/20 to-gray/10 p-8 backdrop-blur-sm">
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#800000] to-[#a00000]">
                   <svg
                     className="h-8 w-8 text-white"
@@ -123,8 +123,8 @@ export default function AboutUs() {
                 </p>
               </div>
 
-              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-yellow-400/20 to-yellow-400/10 p-8 backdrop-blur-sm">
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600">
+              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#800000]/20 to-[#800000]/10 p-8 backdrop-blur-sm">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#800000] to-[#a00000]">
                   <svg
                     className="h-8 w-8 text-white"
                     fill="none"
@@ -149,11 +149,6 @@ export default function AboutUs() {
                 </p>
               </div>
             </div>
-
-         
-
-          
-        
           </div>
         </div>
       </div>

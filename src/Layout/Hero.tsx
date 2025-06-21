@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import BGHeader from "../assets/BGHero.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 // import Typewriter from "@/components/Typewriter";
 
 export const Hero = () => {
@@ -60,9 +61,11 @@ export const Hero = () => {
           layanan terpercaya dari Tujuh Sembilan Oto Rental Berau.
         </motion.p>
         <motion.div className="flex justify-center gap-4" variants={fadeInUp}>
+          <Link to="/armada">
           <Button color="maron" onclick={() => null}>
             Lihat Armada Kami
           </Button>
+          </Link>
           <Button color="blackW" onclick={() => null}>
             Pesan Sekarang
           </Button>

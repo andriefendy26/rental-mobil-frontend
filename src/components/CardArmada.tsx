@@ -2,9 +2,13 @@ interface CardArmadaProps {
   judul: string;
   image: string;
   price: number;
+  transmisi : string;
+  bahanbakar : string;
+  warna : string;
+  kapasitas : string;
 }
 
-export default function CardArmada({ judul, image, price }: CardArmadaProps) {
+export default function CardArmada({ judul, image, price, transmisi, bahanbakar, warna, kapasitas }: CardArmadaProps) {
   const IDR = new Intl.NumberFormat("id-ID", {
     style: "decimal",
     currency: "IDR",
@@ -62,19 +66,19 @@ export default function CardArmada({ judul, image, price }: CardArmadaProps) {
           <div className="grid grid-cols-1 gap-2">
             <div className="flex items-center justify-between border-b border-white/20 py-1">
               <span className="text-white/80">Transmisi</span>
-              <span className="font-medium">AT/MT</span>
+              <span className="font-medium">{transmisi}</span>
             </div>
             <div className="flex items-center justify-between border-b border-white/20 py-1">
               <span className="text-white/80">Bahan Bakar</span>
-              <span className="font-medium">Bensin</span>
+              <span className="font-medium">{bahanbakar}</span>
             </div>
             <div className="flex items-center justify-between border-b border-white/20 py-1">
               <span className="text-white/80">Warna</span>
-              <span className="font-medium">Menyesuaikan</span>
+              <span className="font-medium">{warna}</span>
             </div>
             <div className="flex items-center justify-between border-b border-white/20 py-1">
               <span className="text-white/80">Kapasitas</span>
-              <span className="font-medium">8 Orang</span>
+              <span className="font-medium">{kapasitas ? kapasitas + " " + 'Orang': 'Menyesuaikan'} </span>
             </div>
             <div className="flex items-center justify-between py-1">
               <span className="text-white/80">Tahun</span>
