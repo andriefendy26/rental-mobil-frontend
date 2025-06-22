@@ -9,12 +9,18 @@ import Galeri from "@/Layout/Galeri";
 import Testimoni from "@/Layout/Testimoni";
 import { Mobil } from "@/App";
 
+interface Galeri {
+  gambar : string;
+}
+
 interface Props {
   mobil : Mobil[];
   isLoading : boolean;
+  galeri : Galeri[];
+  isGaleryLoading : boolean;
 }
 
-const Home = ({ mobil, isLoading }: Props) => {
+const Home = ({ mobil, galeri, isLoading, isGaleryLoading }: Props) => {
   return (
     <div className="bg-white">
       <Hero></Hero>
@@ -23,7 +29,7 @@ const Home = ({ mobil, isLoading }: Props) => {
       <AboutUs></AboutUs>
       <Keunggulan></Keunggulan>
       <Armada data={mobil} isLoading={isLoading}></Armada>
-      <Galeri></Galeri>
+      <Galeri data={galeri} isLoading={isGaleryLoading}></Galeri>
       <Testimoni></Testimoni>
     </div>
   );

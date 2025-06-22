@@ -1,24 +1,34 @@
 import { LogoNav } from "@/components/LogoNav";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const [isDarkBackground, setIsDarkBackground] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      if (scrollY > 50) {
+      if (
+        scrollY > 50 ||
+        location.pathname === "/artikel" ||
+        location.pathname === "/tentangkami" ||
+        location.pathname === "/galeri" ||
+        location.pathname.startsWith("/artikel/detail/")
+      ) {
         setIsDarkBackground(true);
       } else {
         setIsDarkBackground(false);
       }
     };
 
+    // Cek saat pertama kali load
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]); // Tambahkan dependency location.pathname
 
   return (
     <nav
@@ -68,6 +78,16 @@ export const Navbar = () => {
               }`}
             >
               Artikel
+            </Link>
+            <Link
+              to="/galeri"
+              className={`text-lg font-medium transition-colors duration-200 ${
+                isDarkBackground
+                  ? "text-gray-800 hover:text-[#800000]"
+                  : "text-white hover:text-gray-200"
+              }`}
+            >
+              Galery
             </Link>
             <Link
               to="/tentangkami"

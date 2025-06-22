@@ -39,7 +39,22 @@ export const getAllCar = async (): Promise<CarResponse> => {
   }
 };
 
-export const getArtikel = async (id) => {
+export const getArtikel = async () => {
+  try {
+    const response = await axios.get(
+      `${import.meta.env.VITE_API_URL_LOCAL}/artikel`,
+    );
+    return response.data
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Gagal mengambil data mobil: ${error.message}`);
+    } else {
+      throw new Error("Terjadi kesalahan tak terduga.");
+    }
+  }
+}
+
+export const getArtikelById = async (id : unknown) => {
   try {
     const response = await axios.get(
       `${import.meta.env.VITE_API_URL_LOCAL}/artikel/${id}`,
@@ -52,4 +67,17 @@ export const getArtikel = async (id) => {
       throw new Error("Terjadi kesalahan tak terduga.");
     }
   }
+}
+
+export const getAllGalery = async () => {
+ try {
+  const response = await axios.get( `${import.meta.env.VITE_API_URL_LOCAL}/galeri`)
+  return response.data
+ } catch (error) {
+  if (axios.isAxiosError(error)) {
+    throw new Error(`Gagal mengambil data mobil: ${error.message}`);
+  } else {
+    throw new Error("Terjadi kesalahan tak terduga.");
+  }
+ }
 }

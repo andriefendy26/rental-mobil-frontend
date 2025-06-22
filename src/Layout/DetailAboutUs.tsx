@@ -8,6 +8,9 @@ import {
   Award,
   MapPin,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+
+import foto1 from "@/assets/tentang1.png"
 
 export default function DetailAboutUs() {
   const services = [
@@ -66,15 +69,15 @@ export default function DetailAboutUs() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+    <div className="mt-20 min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* Hero Section */}
       <div className="relative overflow-hidden rounded-tl-[100px] rounded-tr-[100px]">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-900/10 to-red-800/5"></div>
+        {/* <div className="absolute inset-0 bg-"></div> */}
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div data-aos="fade-right" className="text-center">
             <h1 className="mb-6 text-4xl font-bold tracking-wide text-gray-800 md:text-6xl">
               TENTANG{" "}
-              <span className="bg-gradient-to-r from-red-800 to-red-600 bg-clip-text text-transparent">
+              <span className="bg-[#800000] bg-clip-text text-transparent">
                 KAMI
               </span>
             </h1>
@@ -87,7 +90,10 @@ export default function DetailAboutUs() {
       </div>
 
       {/* Company Description */}
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div
+        data-aos="flip-right"
+        className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"
+      >
         <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-lg">
           <div className="mb-8 text-center">
             <h2 className="mb-6 text-4xl font-bold text-gray-800">
@@ -136,7 +142,10 @@ export default function DetailAboutUs() {
       <div className="bg-gray-50 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+            <div
+              data-aos="flip-up"
+              className="rounded-3xl border border-gray-200 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+            >
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-red-800 to-red-600">
                 <Eye className="h-8 w-8 text-white" />
               </div>
@@ -150,7 +159,10 @@ export default function DetailAboutUs() {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+            <div
+              data-aos="flip-up"
+              className="rounded-3xl border border-gray-200 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+            >
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-red-800 to-red-600">
                 <Zap className="h-8 w-8 text-white" />
               </div>
@@ -169,7 +181,7 @@ export default function DetailAboutUs() {
 
       {/* Services Section */}
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mb-16 text-center">
+        <div data-aos="fade-left" className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-bold text-gray-800">
             Layanan Kami
           </h2>
@@ -181,6 +193,7 @@ export default function DetailAboutUs() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
             <div
+              data-aos="fade-right"
               key={index}
               className="rounded-xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:scale-105 hover:transform hover:border-red-300 hover:shadow-lg"
             >
@@ -199,7 +212,7 @@ export default function DetailAboutUs() {
       {/* Features Section */}
       <div className="bg-gradient-to-r from-red-800/10 to-red-600/5 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
+          <div data-aos="fade-left" className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold text-gray-800">
               Mengapa Pilih Kami?
             </h2>
@@ -212,6 +225,7 @@ export default function DetailAboutUs() {
           <div className="grid gap-8 md:grid-cols-3">
             {features.map((feature, index) => (
               <div
+                data-aos="fade-right"
                 key={index}
                 className="rounded-xl border border-gray-200 bg-white p-8 text-center shadow-lg"
               >
@@ -231,7 +245,10 @@ export default function DetailAboutUs() {
       </div>
 
       {/* Fleet Highlight */}
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div
+        data-aos="flip-up"
+        className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"
+      >
         <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-lg">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
@@ -268,7 +285,7 @@ export default function DetailAboutUs() {
             <div className="relative">
               <div className="absolute inset-0 rotate-3 transform rounded-2xl bg-gradient-to-r from-red-800 to-red-600"></div>
               <img
-                src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=600&h=400&fit=crop"
+                src={foto1}
                 alt="Armada Kendaraan"
                 className="relative h-80 w-full rounded-2xl object-cover shadow-2xl"
               />
@@ -291,9 +308,12 @@ export default function DetailAboutUs() {
             <button className="rounded-full bg-gradient-to-r from-red-800 to-red-600 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:transform hover:from-red-900 hover:to-red-700 hover:shadow-red-500/25">
               Hubungi Sekarang
             </button>
-            <button className="rounded-full border-2 border-red-800 px-8 py-4 font-semibold text-red-800 transition-all duration-300 hover:scale-105 hover:transform hover:bg-red-800 hover:text-white">
+            <Link
+              to="/armada"
+              className="rounded-full border-2 border-red-800 px-8 py-4 font-semibold text-red-800 transition-all duration-300 hover:scale-105 hover:transform hover:bg-red-800 hover:text-white"
+            >
               Lihat Armada
-            </button>
+            </Link>
           </div>
         </div>
       </div>

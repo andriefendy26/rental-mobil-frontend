@@ -44,11 +44,17 @@ export default function Tahapan() {
 
   return (
     <div className="relative grid grid-cols-1 lg:grid-cols-3">
-      <div className="col-span-1 space-y-6 p-6 md:p-12 lg:col-span-2 lg:space-y-8 lg:px-32">
+      <div
+        data-aos="fade-right"
+         className="col-span-1 space-y-6 p-6 md:p-12 lg:col-span-2 lg:space-y-8 lg:px-32"
+      >
         <Button color="green" onclick={() => null}>
           Tahapan Pemesanan
         </Button>
-        <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl text-gray-800">
+        <h1
+          data-aos="fade-right"
+          className="text-3xl font-bold text-gray-800 md:text-4xl lg:text-5xl"
+        >
           Rental Mobil Dengan 3 Tahap
         </h1>
         <motion.div
@@ -71,7 +77,7 @@ export default function Tahapan() {
       </div>
       {/* Backgroundnya */}
       <motion.div
-        className="absolute -top-64 -right-96  hidden w-[1000px] overflow-hidden lg:block"
+        className="absolute -right-96 -top-64  hidden w-[1000px] overflow-hidden lg:block"
         variants={bgVariant}
         initial="hidden"
         animate="visible"

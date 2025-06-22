@@ -9,7 +9,7 @@ interface GaleriProps {
   isLoading: boolean;
 }
 
-export default function Galeri({ data, isLoading }: GaleriProps) {
+export default function GaleriDetail({ data, isLoading }: GaleriProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openModal = (imageLink: string) => {
@@ -116,10 +116,10 @@ export default function Galeri({ data, isLoading }: GaleriProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+    <div className="mt-20 min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
       {/* Header */}
       <div
-        data-aos="fade-left"
+        data-aos="fade-right"
         className="container mx-auto px-4 pt-10 text-center"
       >
         <h1 className="bg-[#800000] bg-clip-text text-4xl  font-bold text-transparent sm:text-5xl">
@@ -134,7 +134,7 @@ export default function Galeri({ data, isLoading }: GaleriProps) {
       {/* Gallery Content */}
       {isLoading ? (
         // Loading state
-        <div className="px-4 py-12 sm:px-6 lg:px-8">
+        <div data-aos="fade-left"  className="px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="columns-2 gap-6 space-y-6 sm:columns-2 lg:columns-3 xl:columns-4">
               {skeletonHeights.map((height, index) => (

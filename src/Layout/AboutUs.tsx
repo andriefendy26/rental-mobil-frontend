@@ -17,7 +17,10 @@ export default function AboutUs() {
       {/* Content */}
       <div className="relative">
         {/* Header */}
-        <div className="container mx-auto px-4 pt-20 text-center">
+        <div
+          data-aos="fade-up"
+          className="container mx-auto px-4 pt-20 text-center"
+        >
           <h2 className="text-4xl font-bold tracking-wide text-white md:text-6xl">
             TENTANG KAMI
           </h2>
@@ -31,7 +34,10 @@ export default function AboutUs() {
         <div className="container mx-auto px-4 py-16">
           <div className="mx-auto max-w-6xl">
             {/* Company Description */}
-            <div className="mb-20 rounded-3xl border border-white/10 bg-gradient-to-br from-white/15 to-white/5 p-10 backdrop-blur-md">
+            <div
+              data-aos="flip-right"
+              className="mb-20 rounded-3xl border border-white/10 bg-gradient-to-br from-white/15 to-white/5 p-10 "
+            >
               <div className="mb-8 text-center">
                 <h3 className="mb-6 text-4xl font-bold text-white">
                   CV. Tujuh Sembilan Oto
@@ -67,21 +73,15 @@ export default function AboutUs() {
                     </div>
                   </div>
                   <div className="rounded-xl bg-white/10 p-4 text-center">
-                    <div className="text-3xl font-bold text-white">
-                      100+
-                    </div>
+                    <div className="text-3xl font-bold text-white">100+</div>
                     <div className="text-sm text-gray-300">Klien Puas</div>
                   </div>
                   <div className="rounded-xl bg-white/10 p-4 text-center">
-                    <div className="text-3xl font-bold text-white">
-                      50+
-                    </div>
+                    <div className="text-3xl font-bold text-white">50+</div>
                     <div className="text-sm text-gray-300">Armada Siap</div>
                   </div>
                   <div className="rounded-xl bg-white/10 p-4 text-center">
-                    <div className="text-3xl font-bold text-white">
-                      24/7
-                    </div>
+                    <div className="text-3xl font-bold text-white">24/7</div>
                     <div className="text-sm text-gray-300">Layanan</div>
                   </div>
                 </div>
@@ -90,7 +90,10 @@ export default function AboutUs() {
 
             {/* Vision & Mission */}
             <div className="mb-20 grid gap-8 md:grid-cols-2">
-              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/20 to-gray/10 p-8 backdrop-blur-sm">
+              <div
+                data-aos="fade-right"
+                className="to-gray/10 rounded-3xl border border-white/10 bg-gradient-to-br from-white/20 p-8"
+              >
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#800000] to-[#a00000]">
                   <svg
                     className="h-8 w-8 text-white"
@@ -123,7 +126,10 @@ export default function AboutUs() {
                 </p>
               </div>
 
-              <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#800000]/20 to-[#800000]/10 p-8 backdrop-blur-sm">
+              <div
+                data-aos="fade-left"
+                className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#800000]/20 to-[#800000]/10 p-8"
+              >
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#800000] to-[#a00000]">
                   <svg
                     className="h-8 w-8 text-white"

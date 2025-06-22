@@ -34,7 +34,7 @@ export default function CardRate({
       <div className="mb-2 flex">{stars(rating)}</div>
       <h3 className="mb-1 text-lg font-semibold text-black">{name}</h3>
       <p className="mb-2 text-sm text-gray-500">Pelanggan</p>
-      <p className="text-center italic text-gray-700">"{description}"</p>
+      <p className="text-center italic text-gray-700">"{description.slice(0, 100) + "..."}"</p>
     </div>
   );
 }
