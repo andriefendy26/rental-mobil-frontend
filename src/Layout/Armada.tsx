@@ -21,7 +21,7 @@ export interface Mobil {
   kapasitas: string;
 }
 
-interface ArmadaProps {
+export interface ArmadaProps {
   data: Mobil[];
   isLoading: boolean;
 }
@@ -63,21 +63,6 @@ const EmptyArmadaState = () => (
       <div className="h-3 w-3 animate-ping rounded-full bg-white delay-150"></div>
       <div className="h-3 w-3 animate-ping rounded-full bg-white delay-300"></div>
     </div>
-
-    {/* Call to Action */}
-    {/* <div className="mt-8 rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm">
-      <p className="mb-3 text-sm text-white">
-        Ingin mendapatkan update terbaru?
-      </p>
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <Button color="maron" onclick={() => null}>
-          <span className="px-4">Hubungi Kami</span>
-        </Button>
-        <button className="rounded-lg border-2 border-yellow-400 bg-transparent px-6 py-2 text-yellow-400 transition-all duration-300 hover:bg-yellow-400 hover:text-black">
-          Lihat Promo
-        </button>
-      </div>
-    </div> */}
   </div>
 );
 

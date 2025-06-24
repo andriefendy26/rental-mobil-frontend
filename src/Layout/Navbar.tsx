@@ -144,33 +144,39 @@ export const Navbar = () => {
           } transition-all duration-300`}
         >
           <div className="space-y-1 rounded-lg bg-white/90 p-4 backdrop-blur-md">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="block rounded-lg px-4 py-2 text-gray-800 hover:bg-gray-100"
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/armada"
               className="block rounded-lg px-4 py-2 text-gray-800 hover:bg-gray-100"
             >
-              Layanan
-            </a>
-            <a
-              href="#"
+              Armada
+            </Link>
+            <Link
+              to="/artikel"
               className="block rounded-lg px-4 py-2 text-gray-800 hover:bg-gray-100"
             >
               Artikel
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/galeri"
+              className="block rounded-lg px-4 py-2 text-gray-800 hover:bg-gray-100"
+            >
+              Galery
+            </Link>
+            <Link
+              to="/tentangkami"
               className="block rounded-lg px-4 py-2 text-gray-800 hover:bg-gray-100"
             >
               Tentang Kami
-            </a>
-            <button className="mt-4 w-full rounded-full bg-[#800000] px-6 py-2 text-white hover:bg-[#600000]">
+            </Link>
+            {/* <button className="mt-4 w-full rounded-full bg-[#800000] px-6 py-2 text-white hover:bg-[#600000]">
               Hubungi Kami
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

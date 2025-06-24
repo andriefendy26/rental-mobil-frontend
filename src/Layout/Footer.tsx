@@ -5,6 +5,7 @@ import {
 } from "react-icons/fa";
 import LogoSem from "../assets/Logo.png";
 import { FaTiktok, FaPhone, FaEnvelope } from "react-icons/fa6";
+import Phone from "@/Api/Phone.json"
 
 export default function Footer() {
   return (
@@ -86,7 +87,7 @@ export default function Footer() {
                 />
                 <div>
                   <p className="text-sm text-gray-300">Office</p>
-                  <p className="font-medium text-white">08XXXXX</p>
+                  <p className="font-medium text-white">{Phone.nomor}</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3 rounded-lg bg-gray-800/50 p-3 transition-colors hover:bg-gray-700/50">
@@ -152,7 +153,7 @@ export default function Footer() {
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
             <div className="text-sm text-gray-400">
-              © 2024 CV. Tujuh Sembilan Oto. All rights reserved.
+              © 2025 CV. Tujuh Sembilan Oto. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a

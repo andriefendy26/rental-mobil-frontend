@@ -24,7 +24,7 @@ const Home = ({ mobil, galeri, isLoading, isGaleryLoading }: Props) => {
   return (
     <div className="bg-white">
       <Hero></Hero>
-      <BookingSection></BookingSection>
+      <BookingSection data={mobil}></BookingSection>
       <Tahapan></Tahapan>
       <AboutUs></AboutUs>
       <Keunggulan></Keunggulan>

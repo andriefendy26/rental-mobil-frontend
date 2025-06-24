@@ -18,12 +18,12 @@ export default function Dropdown({
       <div className="">
         {icon1}
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col ">
         <label className="text-sm font-bold px-1">{label}</label>
         <select name="" id="" defaultValue={desc} className="bg-transparent p-0 m-0">
-        <option disabled={true}>{desc}</option>
+        <option className="z-[9999]" disabled={true}>{desc}</option>
           {options.map((item, i) => (
-            <option key={i}>{item}</option>
+            <option key={i} >{item}</option>
           ))} 
         </select>
       </div>

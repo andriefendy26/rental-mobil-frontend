@@ -9,6 +9,12 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+import { DayPicker } from "react-day-picker";
+import Swal from "sweetalert2";
+import { Mobil } from "./Armada";
+import type { SelectSingleEventHandler } from "react-day-picker";
+import PhoneNumber from "@/Api/Phone.json";
+
 
 interface DropdownProps {
   icon: React.ReactNode;
@@ -31,7 +37,7 @@ interface InputComProps {
 interface DatepickerCustmProps {
   icon: React.ReactNode;
   label: string;
-  value: string;
+  // value: string;
   onChange: (value: string) => void;
 }
 
@@ -51,6 +57,9 @@ interface FormData {
   telepon: string;
   tanggalDari: string;
   tanggalSampai: string;
+}
+export interface ArmadaProps {
+  data: Mobil[];
 }
 
 const Dropdown = ({
@@ -135,32 +144,44 @@ const InputCom = ({
   );
 };
 
-const DatepickerCustm = ({
-  icon,
-  label,
-  value,
-  onChange,
-}: DatepickerCustmProps) => {
+const DatepickerCustm = ({ icon, label, onChange }: DatepickerCustmProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [date, setDate] = useState<Date | undefined>();
+  const handleChange: SelectSingleEventHandler = (
+    SelectedDate: Date | undefined,
+  ) => {
+    setDate(SelectedDate);
+    if (SelectedDate) {
+      const formatted = SelectedDate.toLocaleDateString();
+      setDate(SelectedDate);
+      onChange(formatted);
+    }
+    setIsOpen(false);
+  };
+
   return (
-    <div className="group relative">
+    <div onClick={() => setIsOpen(!isOpen)} className="group relative">
       <div className="flex items-center gap-3 rounded-xl border-2 border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100 p-4 transition-all duration-200 hover:border-red-300 hover:shadow-md">
-        <div className="text-red-800 transition-colors group-hover:text-red-600">
+        <button className="text-red-800 transition-colors group-hover:text-red-600">
           {icon}
-        </div>
+        </button>
         <div className="flex-1">
           <label className="block text-xs font-medium uppercase tracking-wide text-gray-500">
             {label}
           </label>
-          <div className="relative">
-            <input
-              type="date"
-              className="w-full bg-transparent text-sm font-semibold text-gray-800 outline-none [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-0"
-              value={value}
-              onChange={(e) => onChange(e.target.value)}
+          <label className="mt-1 block text-xs font-medium uppercase tracking-wide text-gray-500">
+            {date ? date.toLocaleDateString() : "Pick a Date"}
+          </label>
+          <div
+            className={`dropdown absolute top-16 z-10 ${isOpen ? "" : "hidden"}`}
+          >
+            <DayPicker
+              className="react-day-picker"
+              mode="single"
+              selected={date}
+              onSelect={handleChange}
+              required={false}
             />
-            <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-gray-400">
-              <Calendar size={16} />
-            </div>
           </div>
         </div>
       </div>
@@ -194,23 +215,23 @@ const Button = ({
   );
 };
 
-export const BookingSection = () => {
+export const BookingSection = ({ data }: ArmadaProps) => {
   return (
     <div className="mx-4 my-6">
-      <BookingSectionComp />
+      <BookingSectionComp data={data} />
     </div>
   );
 };
 
-const BookingSectionComp = () => {
+const BookingSectionComp = ({ data }: ArmadaProps) => {
   const [step, setStep] = useState(1);
 
   // Form state
   const [formData, setFormData] = useState<FormData>({
     layanan: "",
     unit: "",
-    alamatDari: "Tarakan",
-    tujuanKe: "Nunukan",
+    alamatDari: "",
+    tujuanKe: "",
     nama: "",
     telepon: "",
     tanggalDari: "",
@@ -218,6 +239,19 @@ const BookingSectionComp = () => {
   });
 
   const handleNextStep = () => {
+    if (
+      formData.layanan == "" ||
+      formData.unit == "" ||
+      formData.alamatDari == "" ||
+      formData.tujuanKe == ""
+    ) {
+      return Swal.fire({
+        title: "Peringatan",
+        text: "Pastikan semua form terisi",
+        icon: "info",
+        confirmButtonText: "Oke",
+      });
+    }
     setStep(2);
   };
 
@@ -228,16 +262,62 @@ const BookingSectionComp = () => {
   const updateFormData = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
+  const handleBooking = () => {
+    if (
+      formData.layanan == "" ||
+      formData.unit == "" ||
+      formData.alamatDari == "" ||
+      formData.tujuanKe == "" ||
+      formData.nama == "" ||
+      formData.telepon == "" ||
+      formData.tanggalDari == "" ||
+      formData.tanggalSampai == ""
+    ) {
+      return Swal.fire({
+        title: "Peringatan",
+        text: "Pastikan semua form terisi",
+        icon: "info",
+        confirmButtonText: "Oke",
+      });
+    }
+    const phoneNumber = PhoneNumber.nomor;
+
+    const message = `==============================
+    *FORMULIR PEMESANAN*
+    ==============================
+    
+    Halo *CV Tujuh Sembilan Oto Rent Car*, berikut data pemesanan saya:
+    
+    • Layanan : *${formData.layanan}*
+    • Unit Armada : *${formData.unit}*
+    • Nama Lengkap : *${formData.nama}*
+    • No Whatsapp : *${formData.telepon}*
+    • Dari Tanggal : *${formData.tanggalDari}*
+    • Sampai Tanggal : *${formData.tanggalSampai}*
+    • Alamat Pelanggan : *${formData.alamatDari}*
+    • Rute Tujuan : *${formData.tujuanKe}*
+    
+    *Mohon untuk konfirmasi selanjutnya!*
+    
+    🙏 Terimakasih 🙏
+    📩 Dikirim via http://Cvtujuhsembilnotorentcar.com`;
+
+    const encodedMessage = encodeURIComponent(message);
+
+    const whatsappURL =
+      (window.location.href = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodedMessage}&type=phone_number&app_absent=0`);
+    window.open(whatsappURL, "_blank");
+  };
 
   return (
-    <div className="relative">
+    <div className="relative" id="booking">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-red-50 via-white to-orange-50"></div>
 
       {/* Main container */}
       <div
         data-aos="fade-right"
-        className="relative z-50 flex flex-col overflow-hidden rounded-2xl border-2 border-gray-200 bg-white p-6 px-12 shadow-2xl md:mx-24 lg:-top-14 lg:mx-16"
+        className="relative z-50 flex flex-col rounded-2xl border-2 border-gray-200 bg-white p-6 px-12 shadow-2xl md:mx-24 lg:-top-14 lg:mx-16"
       >
         {/* Progress indicator */}
         <div className="mb-8 flex items-center justify-center">
@@ -292,7 +372,13 @@ const BookingSectionComp = () => {
                   icon={<Car size={24} />}
                   label="Layanan"
                   desc="Pilih Jenis Layanan"
-                  options={["Rental Mobil", "Travel", "Charter"]}
+                  options={[
+                    "Rental Mobil + Supir",
+                    "Rental Mobil",
+                    "Travel",
+                    "Charter",
+                    "",
+                  ]}
                   value={formData.layanan}
                   onChange={(value) => updateFormData("layanan", value)}
                 />
@@ -301,7 +387,7 @@ const BookingSectionComp = () => {
                   icon={<Car size={24} />}
                   label="Unit"
                   desc="Pilih Jenis Unit"
-                  options={["Avanza", "Innova", "Hiace", "Bus"]}
+                  options={data.map((mobil) => mobil.merek)}
                   value={formData.unit}
                   onChange={(value) => updateFormData("unit", value)}
                 />
@@ -360,7 +446,6 @@ const BookingSectionComp = () => {
                   value={formData.nama}
                   onChange={(value) => updateFormData("nama", value)}
                 />
-
                 <InputCom
                   icon={<Phone size={24} />}
                   label="No Telepon"
@@ -369,22 +454,19 @@ const BookingSectionComp = () => {
                   value={formData.telepon}
                   onChange={(value) => updateFormData("telepon", value)}
                 />
-
                 <DatepickerCustm
                   icon={<Calendar size={24} />}
                   label="Dari Tanggal"
-                  value={formData.tanggalDari}
+                  // value={formData.tanggalDari}
                   onChange={(value) => updateFormData("tanggalDari", value)}
                 />
-
                 <DatepickerCustm
                   icon={<Calendar size={24} />}
                   label="Sampai Tanggal"
-                  value={formData.tanggalSampai}
+                  // value={formData.tanggalSampai}
                   onChange={(value) => updateFormData("tanggalSampai", value)}
                 />
               </div>
-
               <div className="mt-8 flex justify-center gap-4">
                 <Button
                   onClick={handlePrevStep}
@@ -394,7 +476,8 @@ const BookingSectionComp = () => {
                   Kembali
                 </Button>
                 <Button
-                  onClick={() => alert("Booking submitted!")}
+                  // onClick={() => alert("Booking submitted!")}
+                  onClick={handleBooking}
                   className="min-w-40"
                 >
                   <CheckCircle2 className="h-4 w-4" />

@@ -45,7 +45,7 @@ export default function AboutUs() {
                 <div className="mx-auto mb-6 h-0.5 w-20 bg-yellow-400"></div>
               </div>
 
-              <div className="grid items-center gap-8 md:grid-cols-2">
+              <div className="grid items-center gap-8 md:grid-cols-1">
                 <div>
                   <p className="mb-6 text-lg leading-relaxed text-gray-200">
                     Sejak didirikan,{" "}
@@ -65,7 +65,7 @@ export default function AboutUs() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                {/* <div className="grid grid-cols-2 gap-4">
                   <div className="rounded-xl bg-white/10 p-4 text-center">
                     <div className="text-3xl font-bold text-white">5+</div>
                     <div className="text-sm text-gray-300">
@@ -84,7 +84,7 @@ export default function AboutUs() {
                     <div className="text-3xl font-bold text-white">24/7</div>
                     <div className="text-sm text-gray-300">Layanan</div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 

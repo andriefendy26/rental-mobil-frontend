@@ -9,8 +9,9 @@ import {
   MapPin,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import Phone from "@/Api/Phone.json";
 
-import foto1 from "@/assets/tentang1.png"
+import foto1 from "@/assets/tentang1.png";
 
 export default function DetailAboutUs() {
   const services = [
@@ -40,12 +41,12 @@ export default function DetailAboutUs() {
     },
   ];
 
-  const stats = [
-    { number: "5+", label: "Tahun Pengalaman" },
-    { number: "100+", label: "Klien Puas" },
-    { number: "50+", label: "Armada Siap" },
-    { number: "24/7", label: "Layanan" },
-  ];
+  // const stats = [
+  //   { number: "5+", label: "Tahun Pengalaman" },
+  //   { number: "100+", label: "Klien Puas" },
+  //   { number: "50+", label: "Armada Siap" },
+  //   { number: "24/7", label: "Layanan" },
+  // ];
 
   const features = [
     {
@@ -67,6 +68,20 @@ export default function DetailAboutUs() {
         "Tim driver profesional dengan pengalaman bertahun-tahun di berbagai medan.",
     },
   ];
+
+  const phoneNumber = Phone.nomor;
+  const message = `==============================
+  *HALO SAYA INGIN MEMESAN*
+  ==============================
+  
+  Halo *CV Tujuh Sembilan Oto Rent Car*,
+  
+  Saya tertarik untuk melakukan pemesanan mobil. Mohon informasi lebih lanjut mengenai ketersediaan unit  dan proses pemesanan.
+  
+  🙏 Terima kasih 🙏  
+  📩 Dikirim via http://cvtujuhsembilnotorentcar.com`;
+
+  const encodedMessage = encodeURIComponent(message);
 
   return (
     <div className="mt-20 min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
@@ -102,7 +117,7 @@ export default function DetailAboutUs() {
             <div className="mx-auto mb-6 h-0.5 w-20 bg-yellow-400"></div>
           </div>
 
-          <div className="grid items-center gap-12 md:grid-cols-2">
+          <div className="grid items-center gap-12 md:grid-cols-1">
             <div>
               <p className="mb-6 text-lg leading-relaxed text-gray-600">
                 Sejak didirikan,{" "}
@@ -121,7 +136,7 @@ export default function DetailAboutUs() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            {/* <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, index) => (
                 <div
                   key={index}
@@ -133,7 +148,7 @@ export default function DetailAboutUs() {
                   <div className="text-sm text-gray-600">{stat.label}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -305,9 +320,14 @@ export default function DetailAboutUs() {
             konsultasi gratis mengenai kebutuhan transportasi Anda
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <button className="rounded-full bg-gradient-to-r from-red-800 to-red-600 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:transform hover:from-red-900 hover:to-red-700 hover:shadow-red-500/25">
-              Hubungi Sekarang
-            </button>
+            <a
+              href={`https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodedMessage}&type=phone_number&app_absent=0`}
+              target="_blank"
+            >
+              <button className="rounded-full bg-gradient-to-r from-red-800 to-red-600 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:transform hover:from-red-900 hover:to-red-700 hover:shadow-red-500/25">
+                Hubungi Sekarang
+              </button>
+            </a>
             <Link
               to="/armada"
               className="rounded-full border-2 border-red-800 px-8 py-4 font-semibold text-red-800 transition-all duration-300 hover:scale-105 hover:transform hover:bg-red-800 hover:text-white"

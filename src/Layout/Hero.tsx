@@ -3,6 +3,7 @@ import BGHeader from "../assets/BGHero.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 // import Typewriter from "@/components/Typewriter";
+import Phone from "@/Api/Phone.json"
 
 export const Hero = () => {
   const fadeInUp = {
@@ -18,6 +19,20 @@ export const Hero = () => {
       },
     },
   };
+  const phoneNumber = Phone.nomor;
+  const message = `==============================
+  *HALO SAYA INGIN MEMESAN*
+  ==============================
+  
+  Halo *CV Tujuh Sembilan Oto Rent Car*,
+  
+  Saya tertarik untuk melakukan pemesanan mobil. Mohon informasi lebih lanjut mengenai ketersediaan unit dan proses pemesanan.
+  
+  🙏 Terima kasih 🙏  
+  📩 Dikirim via http://cvtujuhsembilnotorentcar.com`;
+  
+
+  const encodedMessage = encodeURIComponent(message);
 
   // const words = [
   //   { text: "Rental ", className: "text-white" },
@@ -28,7 +43,7 @@ export const Hero = () => {
   // ];
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden rounded-bl-[100px] rounded-br-[100px] ">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden md:rounded-bl-[100px] md:rounded-br-[100px] rounded-bl-[50px] rounded-br-[50px] ">
       <div
         className="absolute  inset-0 z-10 bg-cover bg-center bg-no-repeat"
         style={{
@@ -38,7 +53,7 @@ export const Hero = () => {
       ></div>
 
       {/* gradient */}
-      <div className="absolute  inset-0 z-20 bg-black opacity-60" />
+      <div className="absolute inset-0 z-20 bg-black opacity-60" />
 
       {/* Content */}
       <motion.div
@@ -62,13 +77,18 @@ export const Hero = () => {
         </motion.p>
         <motion.div className="flex justify-center gap-4" variants={fadeInUp}>
           <Link to="/armada">
-          <Button color="maron" onclick={() => null}>
-            Lihat Armada Kami
-          </Button>
+            <Button color="maron" onclick={() => null}>
+              Lihat Armada Kami
+            </Button>
           </Link>
-          <Button color="blackW" onclick={() => null}>
-            Pesan Sekarang
-          </Button>
+          <a
+            href={`https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodedMessage}&type=phone_number&app_absent=0`}
+            target="_blank"
+          >
+            <Button color="blackW" onclick={() => null}>
+              Pesan Sekarang
+            </Button>
+          </a>
         </motion.div>
       </motion.div>
       {/* <div className="relative z-20 mx-4 max-w-4xl rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-md md:p-12"></div> */}
