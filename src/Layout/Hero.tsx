@@ -1,5 +1,5 @@
 import { Button } from "@/components/Button";
-import BGHeader from "../assets/BGHero.png";
+import BGHeader from "../assets/BGHero.webp";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 // import Typewriter from "@/components/Typewriter";

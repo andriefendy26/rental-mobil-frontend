@@ -98,7 +98,7 @@ const Dropdown = ({
           {options.map((option, index) => (
             <div
               key={index}
-              className="cursor-pointer border-b border-gray-100 p-3 first:rounded-t-xl last:rounded-b-xl last:border-b-0 hover:bg-gray-50"
+              className="cursor-pointer border-b text-black border-gray-100 p-3 first:rounded-t-xl last:rounded-b-xl last:border-b-0 hover:bg-gray-50"
               onClick={() => {
                 onChange(option);
                 setIsOpen(false);

@@ -3,7 +3,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import CardArmada from "@/components/CardArmada";
-import BGArmada from "../assets/BGArmada.png";
+import BGArmada from "../assets/BGArmada.webp";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";

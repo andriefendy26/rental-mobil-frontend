@@ -1,9 +1,9 @@
 import { Button } from "@/components/Button";
 import Card from "@/components/Card";
-import Logo1 from "../assets/1.png";
-import Logo2 from "../assets/2.png";
-import Logo3 from "../assets/3.png";
-import HeroBG from "../assets/HeroBG.png";
+import Logo1 from "../assets/1.webp";
+import Logo2 from "../assets/2.webp";
+import Logo3 from "../assets/3.webp";
+import HeroBG from "../assets/HeroBG.webp";
 import { motion } from "framer-motion";
 
 export default function Tahapan() {

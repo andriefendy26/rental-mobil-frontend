@@ -1,4 +1,4 @@
-import BGAboutus from "../assets/BGHero.png";
+import BGAboutus from "../assets/BGHero.webp";
 
 export default function AboutUs() {
   return (

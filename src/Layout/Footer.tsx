@@ -4,7 +4,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import LogoSem from "../assets/Logo.png";
-import { FaTiktok, FaPhone, FaEnvelope } from "react-icons/fa6";
+import { FaTiktok, FaPhone } from "react-icons/fa6";
 import Phone from "@/Api/Phone.json"
 
 export default function Footer() {
@@ -35,7 +35,8 @@ export default function Footer() {
               </h3>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href={Phone.facebook}
+                  target="_blank"
                   className="group transform rounded-full bg-blue-600 p-3 transition-all duration-300 hover:scale-110 hover:bg-blue-700 hover:shadow-lg"
                 >
                   <FaFacebookSquare
@@ -44,7 +45,8 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="#"
+                  href={Phone.instagram}
+                  target="_blank"
                   className="group transform rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-3 transition-all duration-300 hover:scale-110 hover:from-purple-600 hover:to-pink-600 hover:shadow-lg"
                 >
                   <FaInstagramSquare
@@ -53,7 +55,8 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="#"
+                  href={Phone.youtube}
+                  target="_blank"
                   className="group transform rounded-full bg-red-600 p-3 transition-all duration-300 hover:scale-110 hover:bg-red-700 hover:shadow-lg"
                 >
                   <FaYoutube
@@ -62,7 +65,8 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="https://www.tiktok.com/@wisda.wis?_t=ZS-8xCD8EIRnTr&_r=1"
+                  href={Phone.tiktok}
+                  target="_blank"
                   className="group transform rounded-full bg-black p-3 transition-all duration-300 hover:scale-110 hover:bg-gray-800 hover:shadow-lg"
                 >
                   <FaTiktok
@@ -90,7 +94,7 @@ export default function Footer() {
                   <p className="font-medium text-white">{Phone.nomor}</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3 rounded-lg bg-gray-800/50 p-3 transition-colors hover:bg-gray-700/50">
+              {/* <div className="flex items-start space-x-3 rounded-lg bg-gray-800/50 p-3 transition-colors hover:bg-gray-700/50">
                 <FaEnvelope
                   className="mt-1 flex-shrink-0 text-emerald-400"
                   size={16}
@@ -99,7 +103,7 @@ export default function Footer() {
                   <p className="text-sm text-gray-300">Email</p>
                   <p className="font-medium text-white">marketing@email.com</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 

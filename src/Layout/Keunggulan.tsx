@@ -1,12 +1,12 @@
 import Card2 from "@/components/Card2";
-import Logo1 from "../assets/1.png";
-import Logo2 from "../assets/8.png";
-import Logo3 from "../assets/7.png";
-import Logo4 from "../assets/6.png";
-import Logo5 from "../assets/5.png";
-import Logo6 from "../assets/4.png";
-import Car1 from "../assets/CarKeunggulan2.png";
-import Car2 from "../assets/CarKeunggulan1.png";
+import Logo1 from "../assets/1.webp";
+import Logo2 from "../assets/8.webp";
+import Logo3 from "../assets/7.webp";
+import Logo4 from "../assets/6.webp";
+import Logo5 from "../assets/5.webp";
+import Logo6 from "../assets/4.webp";
+import Car1 from "../assets/CarKeunggulan2.webp";
+import Car2 from "../assets/CarKeunggulan1.webp";
 import { motion } from "framer-motion";
 
 interface KeunggulanProps {

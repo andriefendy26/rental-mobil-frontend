@@ -23,7 +23,7 @@ export default function Dropdown({
         <select name="" id="" defaultValue={desc} className="bg-transparent p-0 m-0">
         <option className="z-[9999]" disabled={true}>{desc}</option>
           {options.map((item, i) => (
-            <option key={i} >{item}</option>
+            <option key={i} className="" >{item}</option>
           ))} 
         </select>
       </div>
