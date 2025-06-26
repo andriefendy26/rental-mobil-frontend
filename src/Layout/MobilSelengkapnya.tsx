@@ -4,10 +4,12 @@ import "swiper/css/navigation";
 
 import CardArmada from "@/components/CardArmada";
 import BGArmada from "../assets/BGArmada.png";
+import foto1 from "../assets/armada.png";
 
 // import { Button } from "@/components/Button";
 import { Mobil } from "@/App";
 import { Key } from "react";
+import { Helmet } from "react-helmet-async";
 
 interface Props {
   mobil: Mobil[];
@@ -24,63 +26,106 @@ export default function MobilSelengkapnya({ mobil, isLoading }: Props) {
   // ];
 
   return (
-    <div
-      className="relative overflow-hidden bg-[#464b49] bg-cover bg-center bg-no-repeat py-16 pt-24"
-      style={{
-        backgroundImage: `url(${BGArmada})`,
-        backgroundAttachment: "fixed",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+    <>
+      <Helmet>
+        {/* SEO Essentials */}
+        <title>Armada - CV. Tujuh Sembilan Oto Rentcar Berau</title>
+        <meta
+          name="description"
+          content="Armada rental mobil CV. Tujuh Sembilan Oto Berau tersedia untuk perjalanan pribadi, bisnis, dan proyek. Armada bersih, ber-AC, dan rutin diservis."
+        />
+        <link
+          rel="canonical"
+          href="https://cvtujuhsembilanotorentcar.com/armada"
+        />
 
-      {/* Content */}
-      <div className="relative ">
-        {/* Header */}
-        <div
-          data-aos="fade-right"
-          className="container mx-auto px-4 text-center "
-        >
-          <h1 className="text-4xl font-bold text-white sm:text-5xl">
-            ARMADA KAMI
-          </h1>
-          <div className="mx-auto mt-4 h-1 w-24 bg-yellow-400"></div>
-          <p className="mt-6 text-lg text-gray-200">
-            Berikut tipe dan jenis unit armada kami
-          </p>
-        </div>
-        {isLoading ? (
-          <LoadingArmadaState />
-        ) : mobil.length > 0 ? (
+        {/* Open Graph Meta */}
+        <meta
+          property="og:title"
+          content="Armada - CV. Tujuh Sembilan Oto Rentcar Berau"
+        />
+        <meta
+          property="og:description"
+          content="Layanan sewa mobil terpercaya di Berau dengan armada lengkap dan prima. Tersedia untuk pribadi, bisnis, dan proyek. Armada kami bersih, ber-AC, dan selalu siap jalan."
+        />
+        <meta property="og:image" content={foto1} />
+        <meta
+          property="og:url"
+          content="https://cvtujuhsembilanotorentcar.com/armada"
+        />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Meta */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Armada - CV. Tujuh Sembilan Oto Rentcar Berau"
+        />
+        <meta
+          name="twitter:description"
+          content="Rental mobil Berau dengan armada terbaik untuk segala kebutuhan transportasi. Nyaman, aman, dan harga bersaing."
+        />
+        <meta name="twitter:image" content={foto1} />
+      </Helmet>
+
+      <div
+        className="relative overflow-hidden bg-[#464b49] bg-cover bg-center bg-no-repeat py-16 pt-24 md:bg-fixed"
+        style={{
+          backgroundImage: `url(${BGArmada})`,
+          // backgroundAttachment: "fixed",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* Content */}
+        <div className="relative ">
+          {/* Header */}
           <div
-            data-aos="fade-up"
-            className="grid grid-cols-1 gap-10 p-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
+            data-aos="fade-right"
+            className="container mx-auto px-4 text-center "
           >
-            {mobil.map((item: Mobil, i: Key) => (
-              <CardArmada
-                key={i}
-                judul={item.merek}
-                image={item.gambar}
-                price={item.harga}
-                transmisi={item.transmisi}
-                bahanbakar={item.bahan_bakar}
-                warna={item.warna}
-                kapasitas={item.kapasitas}
-              />
-            ))}
+            <h1 className="text-4xl font-bold text-white sm:text-5xl">
+              ARMADA KAMI
+            </h1>
+            <div className="mx-auto mt-4 h-1 w-24 bg-yellow-400"></div>
+            <p className="mt-6 text-lg text-gray-200">
+              Berikut tipe dan jenis unit armada kami
+            </p>
           </div>
-        ) : (
-          <EmptyArmadaState />
-        )}
+          {isLoading ? (
+            <LoadingArmadaState />
+          ) : mobil.length > 0 ? (
+            <div
+              data-aos="fade-up"
+              className="grid grid-cols-1 gap-10 p-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
+            >
+              {mobil.map((item: Mobil, i: Key) => (
+                <CardArmada
+                  key={i}
+                  judul={item.merek}
+                  image={item.gambar}
+                  price={item.harga}
+                  transmisi={item.transmisi}
+                  bahanbakar={item.bahan_bakar}
+                  warna={item.warna}
+                  kapasitas={item.kapasitas}
+                />
+              ))}
+            </div>
+          ) : (
+            <EmptyArmadaState />
+          )}
 
-        {/* Button */}
-        {/* <div className=" text-center">
+          {/* Button */}
+          {/* <div className=" text-center">
           <Button color="maron" onclick={() => null}>
             <span className="px-6">Selengkapnya</span>
           </Button>
         </div> */}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -168,4 +213,3 @@ const LoadingArmadaState = () => (
     </div>
   </div>
 );
-

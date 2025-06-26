@@ -51,12 +51,12 @@ export default function Tahapan() {
         <Button color="green" onclick={() => null}>
           Tahapan Pemesanan
         </Button>
-        <h1
+        <h2
           data-aos="fade-right"
           className="text-3xl font-bold text-gray-800 md:text-4xl lg:text-5xl"
         >
           Rental Mobil Dengan 3 Tahap
-        </h1>
+        </h2>
         <motion.div
           className="flex flex-col gap-4 md:flex-row md:gap-3"
           variants={containerVariants}

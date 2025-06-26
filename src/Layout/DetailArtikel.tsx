@@ -11,6 +11,7 @@ import {
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { renderBlogContent } from "./RenderContent";
+import { Helmet } from "react-helmet-async";
 
 // interface Author {
 //   name: string;
@@ -79,7 +80,7 @@ import { renderBlogContent } from "./RenderContent";
 // Langkah pertama yang harus dilakukan adalah memverifikasi legalitas perusahaan rental. Pastikan perusahaan memiliki:
 
 // - **Izin usaha yang lengkap** dari instansi terkait
-// - **SIUP (Surat Izin Usaha Perdagangan)** yang masih berlaku  
+// - **SIUP (Surat Izin Usaha Perdagangan)** yang masih berlaku
 // - **Sertifikat uji kir** untuk semua kendaraan
 // - **Asuransi kendaraan** yang comprehensive
 
@@ -95,7 +96,7 @@ import { renderBlogContent } from "./RenderContent";
 // - Cek kondisi ban, pastikan masih tebal dan tidak gundul
 // - Periksa lampu depan, belakang, sein, dan hazard
 
-// ### Interior Kendaraan  
+// ### Interior Kendaraan
 // - Kondisi jok dan dashboard
 // - Fungsi AC dan sistem audio
 // - Kelengkapan safety belt
@@ -216,12 +217,12 @@ import { renderBlogContent } from "./RenderContent";
 // };
 
 interface DetailArtikelInterface {
-  judul : string;
-  sub_judul : string;
-  content : string;
-  gambar : string;
-  tags : string;
-  author : string;
+  judul: string;
+  sub_judul: string;
+  content: string;
+  gambar: string;
+  tags: string;
+  author: string;
 }
 
 export default function DetailArtikel(): JSX.Element {
@@ -304,44 +305,85 @@ export default function DetailArtikel(): JSX.Element {
   //     }
   //   });
   // };
-  
+  const seoDescription = detailArtikel
+    ? detailArtikel.sub_judul ||
+      detailArtikel.content.replace(/\n/g, " ").slice(0, 155) + "…"
+    : "";
 
   return (
-    <div className="mt-28 min-h-screen bg-gray-50">
-      {/* Header dengan breadcrumb */}
-      <div className="border-b bg-white shadow-sm">
-        <div className="mx-auto max-w-4xl px-4 py-4">
-          <div className="mb-2 flex items-center text-sm text-gray-500">
-            <Link
-              to="/artikel"
-              className="flex items-center transition-colors hover:text-[#800000]"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Kembali ke Blog
-            </Link>
-            {/* <ChevronRight className="mx-2 h-4 w-4" /> */}
-            {/* <span className="text-[#800000]">{detailArtikel.category}</span> */}
+    <>
+      {detailArtikel && (
+        <Helmet>
+          {/* === TITLE & DESCRIPTION === */}
+          <title>{`${detailArtikel.judul} – CV Tujuh Sembilan Oto`}</title>
+          <meta name="description" content={seoDescription} />
+          {/* keyword dari tag koma-delimited */}
+          <meta name="keywords" content={detailArtikel.tags} />
+
+          {/* === CANONICAL === */}
+          <link
+            rel="canonical"
+            href={`https://cvtujuhsembilanotorentcar.com/artikel/${id}`}
+          />
+
+          {/* === OPEN GRAPH === */}
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:title"
+            content={`${detailArtikel.judul} – CV Tujuh Sembilan Oto`}
+          />
+          <meta property="og:description" content={seoDescription} />
+          <meta property="og:image" content={detailArtikel.gambar} />
+          <meta
+            property="og:url"
+            content={`https://cvtujuhsembilanotorentcar.com/artikel/${id}`}
+          />
+
+          {/* === TWITTER CARD === */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content={`${detailArtikel.judul} – CV Tujuh Sembilan Oto`}
+          />
+          <meta name="twitter:description" content={seoDescription} />
+          <meta name="twitter:image" content={detailArtikel.gambar} />
+        </Helmet>
+      )}
+      <div className="mt-28 min-h-screen bg-gray-50">
+        {/* Header dengan breadcrumb */}
+        <div className="border-b bg-white shadow-sm">
+          <div className="mx-auto max-w-4xl px-4 py-4">
+            <div className="mb-2 flex items-center text-sm text-gray-500">
+              <Link
+                to="/artikel"
+                className="flex items-center transition-colors hover:text-[#800000]"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Kembali ke Blog
+              </Link>
+              {/* <ChevronRight className="mx-2 h-4 w-4" /> */}
+              {/* <span className="text-[#800000]">{detailArtikel.category}</span> */}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="mx-auto max-w-4xl px-4 py-8">
-        <header className="mb-8">
-          {/* <div className="mb-4">
+        <div className="mx-auto max-w-4xl px-4 py-8">
+          <header className="mb-8">
+            {/* <div className="mb-4">
             <span className="inline-flex items-center rounded-full bg-[#800000]/20 px-3 py-1 text-sm font-medium text-[#800000]">
               <Tag className="mr-1 h-4 w-4" />
               {articleData.category}
             </span>
           </div> */}
 
-          <h1 className="mb-4 text-4xl font-bold leading-tight text-gray-900">
-            {detailArtikel?.judul}
-          </h1>
+            <h1 className="mb-4 text-4xl font-bold leading-tight text-gray-900">
+              {detailArtikel?.judul}
+            </h1>
 
-          <p className="mb-6 text-xl leading-relaxed text-gray-600">
-            {detailArtikel?.sub_judul}
-          </p>
-          {/* <div className="mb-6 flex flex-wrap items-center gap-6 text-sm text-gray-500">
+            <p className="mb-6 text-xl leading-relaxed text-gray-600">
+              {detailArtikel?.sub_judul}
+            </p>
+            {/* <div className="mb-6 flex flex-wrap items-center gap-6 text-sm text-gray-500">
             <div className="flex items-center">
               <Calendar className="mr-2 h-4 w-4" />
               {formatDate(articleData.publishDate)}
@@ -355,42 +397,44 @@ export default function DetailArtikel(): JSX.Element {
               {articleData.views.toLocaleString()} views
             </div>
           </div> */}
-        </header>
+          </header>
 
-        <div className="mb-8">
-          <img
-            src={detailArtikel?.gambar}
-            alt={detailArtikel?.judul}
-            className="skeleton h-96 w-full rounded-xl object-cover shadow-lg"
-          />
-        </div>
-
-        <article className="prose-lg prose max-w-none">
-          <div className="porse rounded-xl border bg-white p-8 shadow-sm">
-            {/* {renderContent(detailArtikel.content)} */}
-            {renderBlogContent(detailArtikel?.content)}
+          <div className="mb-8">
+            <img
+              src={detailArtikel?.gambar}
+              alt={detailArtikel?.judul}
+              className="skeleton h-96 w-full rounded-xl object-cover shadow-lg"
+            />
           </div>
-        </article>
 
-        {detailArtikel?.tags && (
-          <div className="mt-8 border-t pt-6">
-            <h3 className="mb-4 text-lg font-semibold text-gray-900">Tags:</h3>
-            <div className="flex flex-wrap gap-2">
-              {detailArtikel.tags
-                .split(",")
-                .map((tag: string, index: number) => (
-                  <span
-                    key={index}
-                    className="cursor-pointer rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 transition-colors hover:bg-gray-200"
-                  >
-                    #{tag.trim()}
-                  </span>
-                ))}
+          <article className="prose prose-lg max-w-none">
+            <div className="porse rounded-xl border bg-white p-8 shadow-sm">
+              {/* {renderContent(detailArtikel.content)} */}
+              {renderBlogContent(detailArtikel?.content)}
             </div>
-          </div>
-        )}
+          </article>
 
-        {/* <div className="mt-12">
+          {detailArtikel?.tags && (
+            <div className="mt-8 border-t pt-6">
+              <h3 className="mb-4 text-lg font-semibold text-gray-900">
+                Tags:
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {detailArtikel.tags
+                  .split(",")
+                  .map((tag: string, index: number) => (
+                    <span
+                      key={index}
+                      className="cursor-pointer rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 transition-colors hover:bg-gray-200"
+                    >
+                      #{tag.trim()}
+                    </span>
+                  ))}
+              </div>
+            </div>
+          )}
+
+          {/* <div className="mt-12">
           <h3 className="mb-6 text-2xl font-bold text-gray-900">
             Artikel Terkait
           </h3>
@@ -418,7 +462,8 @@ export default function DetailArtikel(): JSX.Element {
             ))}
           </div>
         </div> */}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

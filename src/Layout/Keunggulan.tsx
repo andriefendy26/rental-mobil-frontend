@@ -96,34 +96,7 @@ export default function Keunggulan() {
     },
   };
 
-  const carVariants = {
-    left: {
-      hidden: { opacity: 0, x: -300, rotate: -5 },
-      visible: {
-        opacity: 1,
-        x: 0,
-        rotate: 0,
-        transition: {
-          duration: 1.2,
-          ease: "easeOut",
-          delay: 0.5,
-        },
-      },
-    },
-    right: {
-      hidden: { opacity: 0, x: 300, rotate: 5 },
-      visible: {
-        opacity: 1,
-        x: 0,
-        rotate: 0,
-        transition: {
-          duration: 1.2,
-          ease: "easeOut",
-          delay: 0.7,
-        },
-      },
-    },
-  };
+
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#800000] via-[#900000] to-[#700000] py-16 text-white">
@@ -146,7 +119,7 @@ export default function Keunggulan() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.h1
+          <motion.h2
             className="text-4xl font-bold tracking-wide sm:text-5xl lg:text-6xl"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -154,7 +127,7 @@ export default function Keunggulan() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             Keunggulan Kami
-          </motion.h1>
+          </motion.h2>
           <motion.div
             className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600"
             initial={{ width: 0 }}
@@ -203,16 +176,17 @@ export default function Keunggulan() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center justify-between gap-8 md:flex-row lg:gap-16">
               {/* Left Car */}
-              <motion.div
+              <div
                 className="relative max-w-md flex-1 md:max-w-lg lg:max-w-xl"
-                variants={carVariants.left}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.4 },
-                }}
+                data-aos="fade-right"
+                // variants={carVariants.left}
+                // initial="hidden"
+                // whileInView="visible"
+                // viewport={{ once: true, amount: 0.3 }}
+                // whileHover={{
+                //   scale: 1.05,
+                //   transition: { duration: 0.4 },
+                // }}
               >
                 <div className="absolute -inset-4 rounded-lg bg-gradient-to-r from-yellow-400/20 to-transparent blur-lg"></div>
                 <img
@@ -221,19 +195,12 @@ export default function Keunggulan() {
                   className="relative h-auto w-full object-contain drop-shadow-2xl"
                   loading="lazy"
                 />
-              </motion.div>
+              </div>
 
               {/* Right Car */}
-              <motion.div
+              <div
                 className="relative max-w-md flex-1 md:max-w-lg lg:max-w-xl"
-                variants={carVariants.right}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.4 },
-                }}
+                data-aos="fade-left"
               >
                 <div className="absolute -inset-4 rounded-lg bg-gradient-to-l from-yellow-400/20 to-transparent blur-lg"></div>
                 <img
@@ -242,7 +209,7 @@ export default function Keunggulan() {
                   className="relative h-auto w-full object-contain drop-shadow-2xl"
                   loading="lazy"
                 />
-              </motion.div>
+              </div>
             </div>
           </div>
 

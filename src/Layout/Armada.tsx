@@ -99,10 +99,10 @@ const LoadingArmadaState = () => (
 export default function Armada({ data, isLoading }: ArmadaProps) {
   return (
     <div
-      className="relative overflow-hidden bg-[#464b49] bg-cover bg-center bg-no-repeat py-16"
+      className="relative overflow-hidden bg-[#464b49] bg-cover bg-center bg-no-repeat py-16 md:bg-fixed"
       style={{
         backgroundImage: `url(${BGArmada})`,
-        backgroundAttachment: "fixed",
+        // backgroundAttachment: "fixed",
       }}
     >
       {/* Overlay */}
@@ -111,10 +111,10 @@ export default function Armada({ data, isLoading }: ArmadaProps) {
       {/* Content */}
       <div className="relative">
         {/* Header */}
-        <div  className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold text-white sm:text-5xl">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-white sm:text-5xl">
             ARMADA KAMI
-          </h1>
+          </h2>
           <div className="mx-auto mt-4 h-1 w-24 bg-yellow-400"></div>
           <p className="mt-6 text-lg text-gray-200">
             Berikut tipe dan jenis unit armada kami

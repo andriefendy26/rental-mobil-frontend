@@ -5,10 +5,10 @@ export default function AboutUs() {
     <section className="relative min-h-screen overflow-hidden rounded-tl-[100px] rounded-tr-[100px]">
       {/* Background Image with Overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed"
         style={{
           backgroundImage: `url(${BGAboutus})`,
-          backgroundAttachment: "fixed",
+          // backgroundAttachment: "fixed",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>

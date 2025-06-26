@@ -122,9 +122,9 @@ export default function Galeri({ data, isLoading }: GaleriProps) {
         data-aos="fade-left"
         className="container mx-auto px-4 pt-10 text-center"
       >
-        <h1 className="bg-[#800000] bg-clip-text text-4xl  font-bold text-transparent sm:text-5xl">
+        <h2 className="bg-[#800000] bg-clip-text text-4xl  font-bold text-transparent sm:text-5xl">
           GALERI KAMI
-        </h1>
+        </h2>
         <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400"></div>
         <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
           Berikut adalah galeri dari kami

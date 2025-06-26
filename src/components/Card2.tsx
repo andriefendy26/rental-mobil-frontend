@@ -22,9 +22,9 @@ export default function Card2({ Logo, Judul, Deskripsi }: CardProps) {
         </div>
 
         {/* Title */}
-        <h1 className="bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-center text-2xl font-bold leading-tight text-transparent">
+        <h2 className="bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-center text-2xl font-bold leading-tight text-transparent">
           {Judul}
-        </h1>
+        </h2>
 
         {/* Description */}
         <p className="flex flex-1 items-center px-2 text-center text-sm leading-relaxed text-gray-600">

@@ -82,7 +82,7 @@ export default function Testimoni() {
   return (
     <div className="mx-auto mt-10 overflow-hidden px-4">
       <div className="mb-16 text-center">
-        <h1 className="text-4xl lg:text-6xl font-bold text-gray-800">TESTIMONI</h1>
+        <h2 className="text-4xl lg:text-6xl font-bold text-gray-800">TESTIMONI</h2>
         <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-[#800000]"></div>
         <p className="mt-4 text-lg text-gray-600">
           Pengalaman pelanggan tentang kami

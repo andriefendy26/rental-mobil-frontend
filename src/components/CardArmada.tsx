@@ -49,14 +49,15 @@ export default function CardArmada({
       {/* Header Section */}
       <div className="relative bg-gradient-to-br from-gray-100/40 to-gray-200/100 pb-2 pt-3">
         <div className="flex flex-col items-center">
-          <h1 className="mb-2 px-4 text-center text-2xl font-bold text-gray-800">
+          <h2 className="mb-2 px-4 text-center text-2xl font-bold text-gray-800">
             {judul}
-          </h1>
+          </h2>
           <div className="relative">
             <img
               src={image}
               alt={judul}
               className="h-52 w-60 object-contain drop-shadow-lg"
+              loading="lazy"
             />
           </div>
         </div>
@@ -79,7 +80,7 @@ export default function CardArmada({
                   <span className="ml-2 font-medium">IDR</span>
                 </>
               ) : (
-                <h1 className=" text-4xl">HUBUNGI KAMI</h1>
+                <h2 className=" text-4xl">HUBUNGI KAMI</h2>
               )}
             </h2>
             <p className="mt-1 text-lg text-white/80">/hari</p>

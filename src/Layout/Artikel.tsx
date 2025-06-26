@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Search, Calendar, User, ArrowRight, Grid, List } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 interface ArticleData {
   id: number;
@@ -124,124 +125,173 @@ const Artikel: React.FC<ArtikelProps> = ({ data }) => {
   }, [data]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 pt-24">
-      {/* Header Section */}
-      <div className="border-b bg-white shadow-sm">
-        <div
-          data-aos="fade-right"
-          className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8"
-        >
-          <div className="text-center">
-            <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
-              Blog Rental Mobil
-            </h1>
-            <p className="mx-auto max-w-2xl text-xl text-gray-600">
-              Temukan tips, panduan, dan informasi terbaru seputar rental mobil
-              untuk perjalanan yang lebih nyaman
-            </p>
+    <>
+      <Helmet>
+        {/* — SEO Essentials — */}
+        <title>Artikel Seputar Rental Mobil – CV Tujuh Sembilan Oto</title>
+        <meta
+          name="description"
+          content="Baca berbagai artikel, panduan, dan tips bermanfaat seputar layanan rental mobil di Berau agar perjalanan Anda lebih aman dan nyaman."
+        />
+        <link
+          rel="canonical"
+          href="https://cvtujuhsembilanotorentcar.com/artikel"
+        />
+
+        {/* — Open Graph (Facebook, WhatsApp, LinkedIn) — */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Artikel Seputar Rental Mobil – CV Tujuh Sembilan Oto"
+        />
+        <meta
+          property="og:description"
+          content="Temukan berbagai artikel informatif mengenai tips rental mobil, panduan perjalanan, hingga rekomendasi kendaraan terbaik di Berau."
+        />
+        <meta
+          property="og:image"
+          content="https://cvtujuhsembilanotorentcar.com/assets/tentang1-EEqb0RDB.png"
+        />
+        <meta
+          property="og:url"
+          content="https://cvtujuhsembilanotorentcar.com/artikel"
+        />
+
+        {/* — Twitter Cards — */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Artikel Seputar Rental Mobil – CV Tujuh Sembilan Oto"
+        />
+        <meta
+          name="twitter:description"
+          content="Tips, panduan, dan informasi rental mobil terpercaya di Berau untuk perjalanan Anda."
+        />
+        <meta
+          name="twitter:image"
+          content="https://cvtujuhsembilanotorentcar.com/assets/tentang1-EEqb0RDB.png"
+        />
+      </Helmet>
+
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 pt-24">
+        {/* Header Section */}
+        <div className="border-b bg-white shadow-sm">
+          <div
+            data-aos="fade-right"
+            className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8"
+          >
+            <div className="text-center">
+              <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
+                Blog Rental Mobil
+              </h1>
+              <p className="mx-auto max-w-2xl text-xl text-gray-600">
+                Temukan tips, panduan, dan informasi terbaru seputar rental
+                mobil untuk perjalanan yang lebih nyaman
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        {/* Search and Filter Bar */}
-        <div
-          data-aos="fade-down"
-          className="mb-8 rounded-xl bg-white p-6 shadow-lg"
-        >
-          <div className="flex flex-col items-center justify-between gap-4 lg:flex-row">
-            <div className="relative max-w-md flex-1">
-              <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
-              <input
-                type="text"
-                placeholder="Cari artikel rental mobil..."
-                value={searchTerm}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setSearchTerm(e.target.value)
-                }
-                className="w-full rounded-lg border border-gray-300 py-3 pl-10 pr-4 focus:border-transparent focus:ring-2 focus:ring-[#800000]"
-              />
-            </div>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          {/* Search and Filter Bar */}
+          <div
+            data-aos="fade-down"
+            className="mb-8 rounded-xl bg-white p-6 shadow-lg"
+          >
+            <div className="flex flex-col items-center justify-between gap-4 lg:flex-row">
+              <div className="relative max-w-md flex-1">
+                <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Cari artikel rental mobil..."
+                  value={searchTerm}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setSearchTerm(e.target.value)
+                  }
+                  className="w-full rounded-lg border border-gray-300 py-3 pl-10 pr-4 focus:border-transparent focus:ring-2 focus:ring-[#800000]"
+                />
+              </div>
 
-            <div className="flex items-center gap-4">
-              {/* Search Results Count */}
-              {searchTerm && (
-                <span className="text-sm text-gray-600">
-                  {filteredArticles.length} artikel ditemukan
-                </span>
-              )}
+              <div className="flex items-center gap-4">
+                {/* Search Results Count */}
+                {searchTerm && (
+                  <span className="text-sm text-gray-600">
+                    {filteredArticles.length} artikel ditemukan
+                  </span>
+                )}
 
-              {/* View Mode Toggle */}
-              <div className="flex rounded-lg bg-gray-100 p-1">
-                <button
-                  onClick={() => setViewMode("grid")}
-                  className={`rounded-md p-2 transition-colors ${
-                    viewMode === "grid"
-                      ? "bg-white shadow-sm"
-                      : "hover:bg-gray-200"
-                  }`}
-                  title="Grid View"
-                >
-                  <Grid className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={() => setViewMode("list")}
-                  className={`rounded-md p-2 transition-colors ${
-                    viewMode === "list"
-                      ? "bg-white shadow-sm"
-                      : "hover:bg-gray-200"
-                  }`}
-                  title="List View"
-                >
-                  <List className="h-5 w-5" />
-                </button>
+                {/* View Mode Toggle */}
+                <div className="flex rounded-lg bg-gray-100 p-1">
+                  <button
+                    onClick={() => setViewMode("grid")}
+                    className={`rounded-md p-2 transition-colors ${
+                      viewMode === "grid"
+                        ? "bg-white shadow-sm"
+                        : "hover:bg-gray-200"
+                    }`}
+                    title="Grid View"
+                  >
+                    <Grid className="h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={() => setViewMode("list")}
+                    className={`rounded-md p-2 transition-colors ${
+                      viewMode === "list"
+                        ? "bg-white shadow-sm"
+                        : "hover:bg-gray-200"
+                    }`}
+                    title="List View"
+                  >
+                    <List className="h-5 w-5" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Articles Display */}
-        {filteredArticles && filteredArticles.length > 0 ? (
-          <div
-            className={
-              viewMode === "grid"
-                ? "grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-                : "space-y-6"
-            }
-          >
-            {filteredArticles.map((article: ArticleData) => (
-              <ArticleCard
-                key={article.id}
-                article={article}
-                isListView={viewMode === "list"}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="py-16 text-center">
-            <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gray-100">
-              <Search className="h-8 w-8 text-gray-400" />
+          {/* Articles Display */}
+          {filteredArticles && filteredArticles.length > 0 ? (
+            <div
+              className={
+                viewMode === "grid"
+                  ? "grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+                  : "space-y-6"
+              }
+            >
+              {filteredArticles.map((article: ArticleData) => (
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  isListView={viewMode === "list"}
+                />
+              ))}
             </div>
-            <h3 className="mb-2 text-xl font-semibold text-gray-900">
-              {searchTerm ? "Artikel tidak ditemukan" : "Belum ada artikel"}
-            </h3>
-            <p className="text-gray-600">
-              {searchTerm
-                ? `Tidak ada artikel yang cocok dengan "${searchTerm}". Coba ubah kata kunci pencarian.`
-                : "Artikel akan muncul di sini ketika tersedia"}
-            </p>
-            {searchTerm && (
-              <button
-                onClick={() => setSearchTerm("")}
-                className="mt-4 rounded-lg bg-[#800000] px-4 py-2 text-white transition-colors hover:bg-[#800000]/90"
-              >
-                Hapus Pencarian
-              </button>
-            )}
-          </div>
-        )}
+          ) : (
+            <div className="py-16 text-center">
+              <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gray-100">
+                <Search className="h-8 w-8 text-gray-400" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">
+                {searchTerm ? "Artikel tidak ditemukan" : "Belum ada artikel"}
+              </h3>
+              <p className="text-gray-600">
+                {searchTerm
+                  ? `Tidak ada artikel yang cocok dengan "${searchTerm}". Coba ubah kata kunci pencarian.`
+                  : "Artikel akan muncul di sini ketika tersedia"}
+              </p>
+              {searchTerm && (
+                <button
+                  onClick={() => setSearchTerm("")}
+                  className="mt-4 rounded-lg bg-[#800000] px-4 py-2 text-white transition-colors hover:bg-[#800000]/90"
+                >
+                  Hapus Pencarian
+                </button>
+              )}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import {
   FaFacebookSquare,
   FaInstagramSquare,
-  FaYoutube,
+  // FaYoutube,
 } from "react-icons/fa";
 import LogoSem from "../assets/Logo.png";
 import { FaTiktok, FaPhone } from "react-icons/fa6";
@@ -54,7 +54,7 @@ export default function Footer() {
                     className="transition-transform group-hover:scale-110"
                   />
                 </a>
-                <a
+                {/* <a
                   href={Phone.youtube}
                   target="_blank"
                   className="group transform rounded-full bg-red-600 p-3 transition-all duration-300 hover:scale-110 hover:bg-red-700 hover:shadow-lg"
@@ -63,7 +63,7 @@ export default function Footer() {
                     size={20}
                     className="transition-transform group-hover:scale-110"
                   />
-                </a>
+                </a> */}
                 <a
                   href={Phone.tiktok}
                   target="_blank"
