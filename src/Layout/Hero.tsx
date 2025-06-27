@@ -51,7 +51,7 @@ export const Hero = () => {
           name="description"
           content="Rental mobil terpercaya di Berau. CV. Tujuh Sembilan Oto menyediakan armada berkualitas dan layanan profesional untuk perjalanan pribadi, bisnis, hingga proyek tambang."
         />
-        <link rel="canonical" href="/" />
+        <link rel="canonical" href="https://cvtujuhsembilanotorentcar.com/" />
         <meta property="og:title" content="Home - CV. Tujuh Sembilan Oto" />
         <meta
           property="og:description"
@@ -109,7 +109,6 @@ Didukung oleh tim profesional dan armada yang selalu dirawat, kami siap memberik
                 1000, // wait 1s before replacing "Mice" with "Hamsters"
                 "Perjalanan",
                 1000, // wait 1s before replacing "Mice" with "Hamsters"
-             
               ]}
               wrapper="span"
               speed={50}
