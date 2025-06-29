@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 // import Typewriter from "@/components/Typewriter";
 import { TypeAnimation } from "react-type-animation";
 import Phone from "@/Api/Phone.json";
-import { Helmet } from "react-helmet-async";
 
 export const Hero = () => {
   const fadeInUp = {
@@ -45,40 +44,7 @@ export const Hero = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Home</title>
-        <meta
-          name="description"
-          content="Rental mobil terpercaya di Berau. CV. Tujuh Sembilan Oto menyediakan armada berkualitas dan layanan profesional untuk perjalanan pribadi, bisnis, hingga proyek tambang."
-        />
-        <link rel="canonical" href="https://cvtujuhsembilanotorentcar.com/" />
-        <meta property="og:title" content="Home - CV. Tujuh Sembilan Oto" />
-        <meta
-          property="og:description"
-          content="Selamat datang di CV. Tujuh Sembilan Oto, solusi terbaik untuk kebutuhan rental mobil di Berau dan sekitarnya. Kami menawarkan berbagai pilihan kendaraan—dari city car hemat BBM, MPV keluarga, hingga double cabin 4x4 untuk keperluan tambang.
-
-Didukung oleh tim profesional dan armada yang selalu dirawat, kami siap memberikan pengalaman perjalanan yang aman, nyaman, dan efisien. Baik untuk perjalanan pribadi, tamu perusahaan, atau keperluan proyek jangka panjang, Tujuh Sembilan Oto adalah mitra transportasi yang bisa Anda andalkan."
-        />
-        <meta property="og:image" content={BGHeader} />
-        <meta
-          property="og:url"
-          content="https://cvtujuhsembilanotorentcar.com/"
-        />
-        <meta property="og:type" content="website" />
-
-        {/* Optional: Twitter cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Home - CV. Tujuh Sembilan Oto" />
-        <meta
-          name="twitter:description"
-          content="Selamat datang di CV. Tujuh Sembilan Oto, solusi terbaik untuk kebutuhan rental mobil di Berau dan sekitarnya. Kami menawarkan berbagai pilihan kendaraan—dari city car hemat BBM, MPV keluarga, hingga double cabin 4x4 untuk keperluan tambang.
-
-Didukung oleh tim profesional dan armada yang selalu dirawat, kami siap memberikan pengalaman perjalanan yang aman, nyaman, dan efisien. Baik untuk perjalanan pribadi, tamu perusahaan, atau keperluan proyek jangka panjang, Tujuh Sembilan Oto adalah mitra transportasi yang bisa Anda andalkan."
-        />
-        <meta name="twitter:image" content={BGHeader} />
-
-        <link rel="canonical" href="/" />
-      </Helmet>
+ 
       <div className="relative flex min-h-screen items-center justify-center overflow-hidden rounded-bl-[50px] rounded-br-[50px] md:rounded-bl-[100px] md:rounded-br-[100px] ">
         <div
           className="absolute  inset-0 z-10 bg-cover bg-center bg-no-repeat md:bg-fixed"

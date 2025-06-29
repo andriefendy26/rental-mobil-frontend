@@ -25,7 +25,7 @@ export default function CardRate({
   image: string;
 }) {
   return (
-    <div className=" flex max-w-sm flex-col items-center rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+    <div className=" flex max-w-sm h-80  flex-col items-center rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
       <img
         src={image}
         alt="User"

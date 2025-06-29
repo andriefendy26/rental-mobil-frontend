@@ -116,7 +116,7 @@ export default function Galeri({ data, isLoading }: GaleriProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br dark:from-slate-900 dark:to-slate-800">
       {/* Header */}
       <div
         data-aos="fade-left"

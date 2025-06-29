@@ -89,7 +89,7 @@ export default function Testimoni() {
         </p>
       </div>
 
-      <Marquee gradient={true}>
+      <Marquee>
         <div className="flex gap-10 py-10">
           {duplicatedData.map((item, index) => (
             <div key={index} className="">
